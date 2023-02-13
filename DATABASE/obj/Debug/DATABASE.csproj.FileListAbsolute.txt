@@ -1,0 +1,15 @@
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\bin\Debug\DATABASE.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\bin\Debug\DATABASE.pdb
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\bin\Debug\MySql.Data.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\bin\Debug\MySql.Data.xml
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\obj\Debug\DATABASE.csprojResolveAssemblyReference.cache
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\obj\Debug\DATABASE.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\KAIMA\DATABASE\obj\Debug\DATABASE.pdb
+H:\Kaima - 06\KAIMA\DATABASE\bin\Debug\DATABASE.dll
+H:\Kaima - 06\KAIMA\DATABASE\bin\Debug\DATABASE.pdb
+H:\Kaima - 06\KAIMA\DATABASE\bin\Debug\MySql.Data.xml
+H:\Kaima - 06\KAIMA\DATABASE\obj\Debug\DATABASE.csproj.AssemblyReference.cache
+H:\Kaima - 06\KAIMA\DATABASE\obj\Debug\DATABASE.csproj.CoreCompileInputs.cache
+H:\Kaima - 06\KAIMA\DATABASE\obj\Debug\DATABASE.csproj.CopyComplete
+H:\Kaima - 06\KAIMA\DATABASE\obj\Debug\DATABASE.dll
+H:\Kaima - 06\KAIMA\DATABASE\obj\Debug\DATABASE.pdb
