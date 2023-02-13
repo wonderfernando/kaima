@@ -265,3 +265,6 @@ H:\Kaima - 06\KAIMA\INTERFACE\obj\Debug\INTERFACE.csproj.CoreCompileInputs.cache
 H:\Kaima - 06\KAIMA\INTERFACE\obj\Debug\INTERFACE.csproj.CopyComplete
 H:\Kaima - 06\KAIMA\INTERFACE\obj\Debug\INTERFACE.exe
 H:\Kaima - 06\KAIMA\INTERFACE\obj\Debug\INTERFACE.pdb
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\bin\Debug\INTERFACE.exe.config
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.exe
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.pdb
