@@ -14,7 +14,7 @@ namespace DATABASE
             stringConection = new MySqlConnection("Persist Security Info = False; server = localhost; database = db_kaima; uid = root; pwd = ");
         }
 
-        public MySqlConnection getConection()
+        public MySqlConnection getConection() 
         {
             if(stringConection.State == System.Data.ConnectionState.Closed)
                 stringConection.Open();

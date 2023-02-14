@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlunoDB.cs" />
+    <Compile Include="AnoLetivoDB.cs" />
     <Compile Include="AreaFormacaoDB.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ClasseDB.cs" />
     <Compile Include="Conection.cs" />
     <Compile Include="CursoDB.cs" />
     <Compile Include="DisciplinaDB.cs" />
+    <Compile Include="EncarregadoDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaDB.cs" />
     <Compile Include="TurnoDB.cs" />

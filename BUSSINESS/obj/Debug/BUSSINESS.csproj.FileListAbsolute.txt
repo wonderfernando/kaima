@@ -18,3 +18,12 @@ H:\Kaima - 06\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.csproj.CoreCompileInputs.cache
 H:\Kaima - 06\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.csproj.CopyComplete
 H:\Kaima - 06\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.dll
 H:\Kaima - 06\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.pdb
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\bin\Debug\BUSSINESS.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\bin\Debug\BUSSINESS.pdb
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\bin\Debug\DATABASE.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\bin\Debug\MySql.Data.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\bin\Debug\DATABASE.pdb
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\bin\Debug\MySql.Data.xml
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.csprojResolveAssemblyReference.cache
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.dll
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\BUSSINESS\obj\Debug\BUSSINESS.pdb
