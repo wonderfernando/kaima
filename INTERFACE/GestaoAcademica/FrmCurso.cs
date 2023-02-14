@@ -99,8 +99,8 @@ namespace INTERFACE.GestaoAcademica
                 guna2DataGridView1.Rows.Add(cursos.Count);
                 foreach (Curso item in cursos)
                 {
-                    guna2DataGridView1.Rows[row].Cells["nome"].Value = item.nome;
-                    guna2DataGridView1.Rows[row].Cells["mensalidade"].Value = item.mensalidade;
+                    guna2DataGridView1.Rows[row].Cells["nome"].Value = item.Nome;
+                    guna2DataGridView1.Rows[row].Cells["mensalidade"].Value = item.Mensalidade;
                     guna2DataGridView1.Rows[row].Cells["duracao"].Value = item.area.duracao;
                     row++;
                 }

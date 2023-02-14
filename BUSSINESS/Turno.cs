@@ -15,10 +15,18 @@ namespace BUSSINESS
 
         }
         public string nome { get; set; }
+        public int Id { get; set; }
         public string inicio { get; set; }
         public string final { get; set; }
 
-        public Turno(string nome, string inicio, string final)
+        public Turno(int Id,string nome, string inicio, string final)
+        {
+            this.Id = Id;
+            this.nome = nome;
+            this.inicio = inicio;
+            this.final = final;
+        }
+        public Turno( string nome, string inicio, string final)
         {
             this.nome = nome;
             this.inicio = inicio;
@@ -35,9 +43,19 @@ namespace BUSSINESS
             List<Turno> turnos = new List<Turno>();
             foreach (DataRow item in turno.listTodos().Rows)
             {
-                turnos.Add(new Turno(item["nome"].ToString(), item["inicio"].ToString(), item["final"].ToString()));
+                turnos.Add(new Turno(int.Parse(item["id"].ToString()),item["nome"].ToString(), item["inicio"].ToString(), item["final"].ToString()));
             }
             return turnos;
+        }
+        public static Turno findId(int id)
+        {
+            DataRow item = new TurnoDB().findId(id);
+            if (item != null)
+            {
+                Turno turno = new Turno(int.Parse(item["id"].ToString()), item["nome"].ToString(), item["inicio"].ToString(), item["final"].ToString());
+                return turno;
+            }
+            return null;
         }
 
 

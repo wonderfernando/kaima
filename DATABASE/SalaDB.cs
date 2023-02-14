@@ -38,6 +38,20 @@ namespace DATABASE
             con.desconect();
             return dt;
         }
-      
+        public DataRow findId(int id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            {
+                adapter.SelectCommand.Connection = con.getConection();
+                adapter.SelectCommand.CommandText = "SELECT * FROM sala WHERE id = @id";
+                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                adapter.Fill(dt);
+                con.desconect();
+                DataRow drow = dt.Rows[0];
+                return drow;
+            }
+        }
+
     }
 }

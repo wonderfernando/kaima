@@ -43,6 +43,7 @@
     <Compile Include="Aluno.cs" />
     <Compile Include="AnoLectivo.cs" />
     <Compile Include="AreaFormacao.cs" />
+    <Compile Include="Cargo.cs" />
     <Compile Include="Classe.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Disciplina.cs" />

@@ -44,5 +44,15 @@ namespace BUSSINESS
             DisciplinaDB disciplinasDB = new DisciplinaDB();
             return disciplinasDB.listTodos(); ;
         }
+        public static Disciplina findId(int id)
+        {
+            DataRow item = new ClasseDB().findId(id);
+            if (item != null)
+            {
+                Disciplina disc = new Disciplina(item["disciplina"].ToString());
+                return disc;
+            }
+            return null;
+        }
     }
 }

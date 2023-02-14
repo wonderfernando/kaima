@@ -44,21 +44,20 @@ namespace DATABASE
             }
             return dt;
         }
-        public DataTable listTodoDataGrid()
+        
+        public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            try
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
             {
-                string sql = "SELECT curso.nome as nome, curso.mensalidade as mensalidade,area_formacao.duracao as duracao FROM curso inner join area_formacao on curso.area_id = area_formacao_id";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con.getConection());
+                adapter.SelectCommand.Connection = con.getConection();
+                adapter.SelectCommand.CommandText = "SELECT * FROM curso WHERE id = @id";
+                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();
+                DataRow drow = dt.Rows[0];
+                return drow;
             }
-            catch (Exception erro)
-            {
-                throw new Exception("deu erro ao acessar o banco de dados" + erro);
-            }
-            return dt;
         }
     }
 }

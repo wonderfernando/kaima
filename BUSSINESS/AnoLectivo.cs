@@ -35,6 +35,10 @@ namespace BUSSINESS
             this.Status = Status;
         }
         AnoLetivoDB anoLetivoDB = new AnoLetivoDB();
+        public bool Insert()
+        {
+            return anoLetivoDB.Insert(this.Ano,this.DataInicio, this.DataFinal, this.Status);
+        }
         public List<AnoLectivo> listTodos()
         {
             List<AnoLectivo> anoLetivos = new List<AnoLectivo>();
