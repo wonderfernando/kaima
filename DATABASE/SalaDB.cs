@@ -41,10 +41,8 @@ namespace DATABASE
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter( "SELECT * FROM sala WHERE id = @id", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM sala WHERE id = @id";
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();

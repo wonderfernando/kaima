@@ -17,7 +17,7 @@ namespace DATABASE
             using (MySqlCommand command = new MySqlCommand())
             {
                 command.Connection = con.getConection();
-                command.CommandText = "INSERT INTO professor(funcionario_id) VALUES(@idFuncionario)";
+                command.CommandText = "INSERT INTO professor(funcionaro_id) VALUES(@idFuncionario)";
                 command.Parameters.AddWithValue("@idFuncionario", IdFuncionario);
                 return command.ExecuteNonQuery() == 1;
             }
@@ -26,10 +26,8 @@ namespace DATABASE
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM professor", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM professor";
                 adapter.Fill(dt);
                 con.desconect();
                 return dt;
@@ -39,24 +37,45 @@ namespace DATABASE
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM professor WHERE id = @id", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM professor WHERE id = @id";
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                if(dt.Rows.Count>0)
+                return dt.Rows[0];
+                return null;
+            }
+        }
+        public DataRow findByFuncId(int id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM professor WHERE funcionaro_id = @id", con.getConection()))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                adapter.Fill(dt);
+                con.desconect();
+                if(dt.Rows.Count >0)
+                  return dt.Rows[0];
+                else
+                  return null;
+            }
+        }
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM professor WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
             }
         }
         public DataRow getLast()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM professor order by id desc", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM professor WHERE order by id desc";
                 adapter.Fill(dt);
                 con.desconect();
                 DataRow drow = dt.Rows[0];

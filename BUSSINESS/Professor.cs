@@ -18,6 +18,14 @@ namespace BUSSINESS
         {
             return professorDB.Insert(this.IdFuncionario);
         }
+        public bool DELETE()
+        {
+            return professorDB.DELETE(this.Id);
+        }
+        public static bool DELETE(int id)
+        {
+            return new ProfessorDB().DELETE(id);
+        }
         public Professor()
         {
 
@@ -38,8 +46,8 @@ namespace BUSSINESS
             DataTable dt = professorDB.listTodos();
             foreach (DataRow item in dt.Rows)
             {
-                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionario_id"].ToString()));
-                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionario_id"].ToString()));
+                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionaro_id"].ToString()));
+                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionaro_id"].ToString()));
                 professores.Add(professor);
             }
             return professores;
@@ -49,8 +57,19 @@ namespace BUSSINESS
             DataRow item = new ProfessorDB().findId(id);
             if (item != null)
             {
-                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionario_id"].ToString()));
-                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionario_id"].ToString()));
+                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionaro_id"].ToString()));
+                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionaro_id"].ToString()));
+                return professor;
+            }
+            return null;
+        }
+        public static Professor findByFuncId(int id)
+        {
+            DataRow item = new ProfessorDB().findByFuncId(id);
+            if (item != null)
+            {
+                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionaro_id"].ToString()));
+                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionaro_id"].ToString()));
                 return professor;
             }
             return null;
@@ -60,8 +79,8 @@ namespace BUSSINESS
             DataRow item = new ProfessorDB().getLast();
             if (item != null)
             {
-                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionario_id"].ToString()));
-                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionario_id"].ToString()));
+                Professor professor = new Professor(int.Parse(item["id"].ToString()), int.Parse(item["funcionaro_id"].ToString()));
+                professor.Funcionario = BUSSINESS.Funcionario.findId(int.Parse(item["funcionaro_id"].ToString()));
                 return professor;
             }
             return null;

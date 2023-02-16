@@ -19,7 +19,7 @@ namespace BUSSINESS
         public int IdDisciplina { get; set; }
 
         public Professor Professor { get; set; }
-        public Disciplina Disciplinad { get; set; }
+        public Disciplina Disciplina { get; set; }
 
         public ProfessorDisciplina(int Id , int IdProfessor, int IdDisciplina)
         {
@@ -44,7 +44,23 @@ namespace BUSSINESS
             List<ProfessorDisciplina> professorDisciplinas = new List<ProfessorDisciplina>();
             foreach (DataRow item in professorDisciplinaDB.listTodos().Rows)
             {
-                professorDisciplinas.Add(new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString())));
+                ProfessorDisciplina prof = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
+                prof.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));
+                prof.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
+
+            }
+            return professorDisciplinas;
+        }
+        public static List<ProfessorDisciplina> listTodosByDiscId(int idDisci)
+        {
+            List<ProfessorDisciplina> professorDisciplinas = new List<ProfessorDisciplina>();
+            foreach (DataRow item in new ProfessorDisciplinaDB().listTodosByIdDisc(idDisci).Rows)
+            {
+                ProfessorDisciplina prof = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
+                prof.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));
+                prof.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
+
+                professorDisciplinas.Add(prof);
             }
             return professorDisciplinas;
         }
@@ -54,6 +70,8 @@ namespace BUSSINESS
             if (item != null)
             {
                 ProfessorDisciplina professorDisciplina = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
+                professorDisciplina.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));
+                professorDisciplina.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
                 return professorDisciplina;
             }
             return null;

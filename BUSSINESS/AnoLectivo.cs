@@ -45,17 +45,17 @@ namespace BUSSINESS
             DataTable dt = anoLetivoDB.listTodos();
             foreach (DataRow item in dt.Rows)
             {
-                AnoLectivo anoLetivo = new AnoLectivo(int.Parse(item["id"].ToString()), item["ano_letivo"].ToString(),item["data_inicio"].ToString(), item["data_final"].ToString(),int.Parse(item["status"].ToString()));
+                AnoLectivo anoLetivo = new AnoLectivo(int.Parse(item["id"].ToString()), item["ano_lectivo"].ToString(),item["data_inicio"].ToString(), item["data_final"].ToString(),int.Parse(item["status"].ToString()));
                 anoLetivos.Add(anoLetivo);
             }
             return anoLetivos;
         }
         public static AnoLectivo findId(int id)
         {
-            DataRow item = new ClasseDB().findId(id);
+            DataRow item = new AnoLetivoDB().findId(id);
             if (item != null)
             {
-                AnoLectivo anoLetivo = new AnoLectivo(int.Parse(item["id"].ToString()), item["ano_letivo"].ToString(), item["data_inicio"].ToString(), item["data_final"].ToString(), int.Parse(item["status"].ToString()));
+                AnoLectivo anoLetivo = new AnoLectivo(int.Parse(item["id"].ToString()), item["ano_lectivo"].ToString(), item["data_inicio"].ToString(), item["data_final"].ToString(), int.Parse(item["status"].ToString()));
                 return anoLetivo;
             }
             return null;
@@ -65,7 +65,7 @@ namespace BUSSINESS
             DataRow item = new AnoLetivoDB().getLast();
             if (item != null)
             {
-                AnoLectivo anoLetivo = new AnoLectivo(int.Parse(item["id"].ToString()), item["ano_letivo"].ToString(), item["data_inicio"].ToString(), item["data_final"].ToString(), int.Parse(item["status"].ToString()));
+                AnoLectivo anoLetivo = new AnoLectivo(int.Parse(item["id"].ToString()), item["ano_lectivo"].ToString(), item["data_inicio"].ToString(), item["data_final"].ToString(), int.Parse(item["status"].ToString()));
                 return anoLetivo;
             }
             return null;

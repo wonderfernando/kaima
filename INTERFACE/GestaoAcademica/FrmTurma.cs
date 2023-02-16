@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUSSINESS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,47 +20,8 @@ namespace INTERFACE.GestaoAcademica
 
         private void FrmTurma_Load(object sender, EventArgs e)
         {
-      
-            guna2DataGridView1.Rows.Add(4);
-            guna2DataGridView1.Rows[0].Cells[0].Value = "IG10A";
-            guna2DataGridView1.Rows[0].Cells[1].Value = "Informarica de Gestão";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "10 Classe";
-            guna2DataGridView1.Rows[0].Cells[3].Value = "50";
-            guna2DataGridView1.Rows[0].Cells[4].Value = "Manha";
-            guna2DataGridView1.Rows[0].Cells[5].Value = "Jose Gonsalves";
-            guna2DataGridView1.Rows[0].Cells[6].Value = "Ver todos";
-            guna2DataGridView1.Rows[0].Cells[7].Value = "Editar";
-            guna2DataGridView1.Rows[0].Cells[8].Value = "Apagar";
 
-            guna2DataGridView1.Rows[1].Cells[0].Value = "IG11A";
-            guna2DataGridView1.Rows[1].Cells[1].Value = "Informarica de Gestão";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "11 Classe";
-            guna2DataGridView1.Rows[1].Cells[3].Value = "20";
-            guna2DataGridView1.Rows[1].Cells[4].Value = "Tarde";
-            guna2DataGridView1.Rows[1].Cells[5].Value = "Manuel Eduardo";
-            guna2DataGridView1.Rows[1].Cells[6].Value = "Ver todos";
-            guna2DataGridView1.Rows[1].Cells[7].Value = "Editar";
-            guna2DataGridView1.Rows[1].Cells[8].Value = "Apagar";
-
-            guna2DataGridView1.Rows[2].Cells[0].Value = "GG10C";
-            guna2DataGridView1.Rows[2].Cells[1].Value = "Enfermagem";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "10 Classe";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "45";
-            guna2DataGridView1.Rows[2].Cells[4].Value = "Manha";
-            guna2DataGridView1.Rows[2].Cells[5].Value = "Suzarit Manuel";
-            guna2DataGridView1.Rows[2].Cells[6].Value = "Ver todos";
-            guna2DataGridView1.Rows[2].Cells[7].Value = "Editar";
-            guna2DataGridView1.Rows[2].Cells[8].Value = "Apagar";
-
-            guna2DataGridView1.Rows[3].Cells[0].Value = "IG10A";
-            guna2DataGridView1.Rows[3].Cells[1].Value = "Informarica de Gestão";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "10 Classe";
-            guna2DataGridView1.Rows[3].Cells[3].Value = "50";
-            guna2DataGridView1.Rows[3].Cells[4].Value = "Manha";
-            guna2DataGridView1.Rows[3].Cells[5].Value = "Jose Gonsalves";
-            guna2DataGridView1.Rows[3].Cells[6].Value = "Ver todos";
-            guna2DataGridView1.Rows[3].Cells[7].Value = "Editar";
-            guna2DataGridView1.Rows[3].Cells[8].Value = "Apagar";
+            loadGrid();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -70,6 +32,30 @@ namespace INTERFACE.GestaoAcademica
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             new FrmTurmaCadastro().ShowDialog();
+        }
+        List<Turma> listTurma;
+        public void loadGrid()
+        {
+            guna2DataGridView1.Rows.Clear();
+            listTurma = new Turma().listTodos();
+            if (listTurma.Count>0)
+            {
+                guna2DataGridView1.Rows.Add(listTurma.Count);
+            }
+            int count = 0;
+            foreach (Turma item in listTurma)
+            {
+                guna2DataGridView1.Rows[count].Cells["nome"].Value = item.Nome;
+                guna2DataGridView1.Rows[count].Cells["curso"].Value = item.Curso.Nome;
+                guna2DataGridView1.Rows[count].Cells["classe"].Value = item.Classe.Nome;
+                guna2DataGridView1.Rows[count].Cells["turno"].Value = item.Turno.nome;
+                guna2DataGridView1.Rows[count].Cells["res"].Value = item.Professor.Funcionario.Nome;
+                guna2DataGridView1.Rows[count].Cells["ano"].Value = item.AnoLectivo.Ano;
+                guna2DataGridView1.Rows[count].Cells["sala"].Value = item.Sala.nome ;
+                count++;
+                                     
+            }
+    
         }
     }
 }

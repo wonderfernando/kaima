@@ -25,7 +25,7 @@ namespace BUSSINESS
         }
         public Cargo(string Nome)
         {
-            this.Id = Id;
+           
             this.Nome = Nome;
         }
         public bool Insert()

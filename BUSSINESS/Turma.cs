@@ -60,7 +60,7 @@ namespace BUSSINESS
             DataTable dt = turmaDB.listTodos();
             foreach (DataRow item in dt.Rows)
             {
-                Turma turma = new Turma(int.Parse(item["id"].ToString()), item["name"].ToString(), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["turno_id"].ToString()), int.Parse(item["prof_id"].ToString()),int.Parse(item["ano_id"].ToString()),int.Parse(item["sala_id"].ToString()));
+                Turma turma = new Turma(int.Parse(item["id"].ToString()), item["nome"].ToString(), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["turno_id"].ToString()), int.Parse(item["prof_id"].ToString()),int.Parse(item["ano_id"].ToString()),int.Parse(item["sala_id"].ToString()));
                 turma.AnoLectivo = BUSSINESS.AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
                 turma.Curso = BUSSINESS.Curso.findId(int.Parse(item["curso_id"].ToString()));
                 turma.Classe = BUSSINESS.Classe.findId(int.Parse(item["classe_id"].ToString()));
@@ -76,7 +76,7 @@ namespace BUSSINESS
             DataRow item = new TurmaDB().findId(id);
             if (item != null)
             {
-                Turma turma = new Turma(int.Parse(item["id"].ToString()), item["name"].ToString(), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["turno_id"].ToString()), int.Parse(item["prof_id"].ToString()), int.Parse(item["ano_id"].ToString()), int.Parse(item["sala_id"].ToString()));
+                Turma turma = new Turma(int.Parse(item["id"].ToString()), item["nome"].ToString(), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["turno_id"].ToString()), int.Parse(item["prof_id"].ToString()), int.Parse(item["ano_id"].ToString()), int.Parse(item["sala_id"].ToString()));
                 turma.AnoLectivo = BUSSINESS.AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
                 turma.Curso = BUSSINESS.Curso.findId(int.Parse(item["curso_id"].ToString()));
                 turma.Classe = BUSSINESS.Classe.findId(int.Parse(item["classe_id"].ToString()));
@@ -93,7 +93,7 @@ namespace BUSSINESS
             DataRow item = new TurmaDB().getLast();
             if (item != null)
             {
-                Turma turma = new Turma(int.Parse(item["id"].ToString()), item["name"].ToString(), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["turno_id"].ToString()), int.Parse(item["prof_id"].ToString()), int.Parse(item["ano_id"].ToString()), int.Parse(item["sala_id"].ToString()));
+                Turma turma = new Turma(int.Parse(item["id"].ToString()), item["nome"].ToString(), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["turno_id"].ToString()), int.Parse(item["prof_id"].ToString()), int.Parse(item["ano_id"].ToString()), int.Parse(item["sala_id"].ToString()));
                 turma.AnoLectivo = BUSSINESS.AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
                 turma.Curso = BUSSINESS.Curso.findId(int.Parse(item["curso_id"].ToString()));
                 turma.Classe = BUSSINESS.Classe.findId(int.Parse(item["classe_id"].ToString()));

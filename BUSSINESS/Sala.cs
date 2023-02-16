@@ -54,7 +54,7 @@ namespace BUSSINESS
         }
         public static Sala findId(int id)
         {
-            DataRow item = new ClasseDB().findId(id);
+            DataRow item = new SalaDB().findId(id);
             if (item != null)
             {
                 Sala sala = new Sala(int.Parse(item["id"].ToString()), item["nome"].ToString(), int.Parse(item["capacidade"].ToString()), item["tipo"].ToString());

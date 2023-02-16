@@ -37,16 +37,18 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apagar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,11 +118,13 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 40;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
-            this.Column2,
-            this.Editar,
+            this.curso,
+            this.classe,
+            this.turno,
+            this.sala,
+            this.res,
+            this.ano,
             this.Apagar,
-            this.Tipo,
-            this.Column3,
             this.Column4,
             this.btnEditar,
             this.Column1});
@@ -169,65 +173,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 200F;
-            this.Column2.HeaderText = "Curso";
-            this.Column2.Name = "Column2";
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Classe";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Apagar
-            // 
-            this.Apagar.HeaderText = "Alunos";
-            this.Apagar.Name = "Apagar";
-            this.Apagar.ReadOnly = true;
-            this.Apagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Apagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Turno";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Responsável";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Professores";
-            this.Column4.Name = "Column4";
-            // 
-            // btnEditar
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.btnEditar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.btnEditar.HeaderText = "Acções";
-            this.btnEditar.Name = "btnEditar";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // guna2Button1
             // 
             this.guna2Button1.Animated = true;
@@ -246,6 +191,85 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(109, 36);
             this.guna2Button1.TabIndex = 12;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // curso
+            // 
+            this.curso.FillWeight = 200F;
+            this.curso.HeaderText = "Curso";
+            this.curso.Name = "curso";
+            // 
+            // classe
+            // 
+            this.classe.HeaderText = "Classe";
+            this.classe.Name = "classe";
+            this.classe.ReadOnly = true;
+            this.classe.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.classe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // turno
+            // 
+            this.turno.HeaderText = "Turno";
+            this.turno.Name = "turno";
+            this.turno.ReadOnly = true;
+            // 
+            // sala
+            // 
+            this.sala.HeaderText = "Sala";
+            this.sala.Name = "sala";
+            // 
+            // res
+            // 
+            this.res.HeaderText = "Responsável";
+            this.res.Name = "res";
+            // 
+            // ano
+            // 
+            this.ano.HeaderText = "Ano Letivo";
+            this.ano.Name = "ano";
+            // 
+            // Apagar
+            // 
+            this.Apagar.HeaderText = "Alunos";
+            this.Apagar.Image = global::INTERFACE.Properties.Resources.ek;
+            this.Apagar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Apagar.Name = "Apagar";
+            this.Apagar.ReadOnly = true;
+            this.Apagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Professores";
+            this.Column4.Image = global::INTERFACE.Properties.Resources.ek;
+            this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // btnEditar
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.btnEditar.DefaultCellStyle = dataGridViewCellStyle3;
+            this.btnEditar.HeaderText = "Editar";
+            this.btnEditar.Image = global::INTERFACE.Properties.Resources.Edit_50px;
+            this.btnEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Apagar";
+            this.Column1.Image = global::INTERFACE.Properties.Resources.del1;
+            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FrmTurma
             // 
@@ -273,13 +297,15 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apagar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewButtonColumn Column4;
-        private System.Windows.Forms.DataGridViewButtonColumn btnEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn res;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ano;
+        private System.Windows.Forms.DataGridViewImageColumn Apagar;
+        private System.Windows.Forms.DataGridViewImageColumn Column4;
+        private System.Windows.Forms.DataGridViewImageColumn btnEditar;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
     }
 }
