@@ -353,9 +353,39 @@ namespace INTERFACE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap del1 {
+            get {
+                object obj = ResourceManager.GetObject("del1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Edit_104px {
             get {
                 object obj = ResourceManager.GetObject("Edit_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_50px {
+            get {
+                object obj = ResourceManager.GetObject("Edit_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ek {
+            get {
+                object obj = ResourceManager.GetObject("ek", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

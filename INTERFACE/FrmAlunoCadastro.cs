@@ -12,6 +12,12 @@ namespace INTERFACE
 {
     public partial class FrmAlunoCadastro : Form
     {
+        int Task;
+        public FrmAlunoCadastro(int Task)
+        {
+            InitializeComponent();
+            this.Task = Task;
+        }
         public FrmAlunoCadastro()
         {
             InitializeComponent();

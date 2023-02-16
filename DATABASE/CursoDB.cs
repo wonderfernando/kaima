@@ -48,10 +48,8 @@ namespace DATABASE
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso WHERE id = @id", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM curso WHERE id = @id";
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();
@@ -59,5 +57,55 @@ namespace DATABASE
                 return drow;
             }
         }
+        public DataRow getLast()
+        {
+            DataTable dt = new DataTable();
+           using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso order by id desc limit 1", con.getConection()))
+            {
+                    
+                adapter.Fill(dt);
+                con.desconect();
+                DataRow drow = dt.Rows[0];
+                return drow;
+            }
+        }
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM curso WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+        public bool Edit(int Id, string Nome, int IdArea, float Mensalidade)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE curso SET nome = @nome, area_id = @area, mensalidade = @mensalidade WHERE id = @id";
+
+                command.Parameters.AddWithValue("@nome", Nome);
+                command.Parameters.AddWithValue("@area", IdArea);
+                command.Parameters.AddWithValue("@mensalidade", Mensalidade);
+                command.Parameters.AddWithValue("@id", Id);
+
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+
+        public DataTable listQuery(string Nome)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso WHERE  nome LIKE '%' @nome '%'", con.getConection()))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@nome", Nome);
+                adapter.Fill(dt);
+                con.desconect();
+                return dt;
+            }
+        }
+
     }
 }

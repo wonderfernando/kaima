@@ -18,12 +18,12 @@ namespace INTERFACE.GestaoAcademica
             InitializeComponent();
         }
 
-        
-          
+
+        List<AreaFormacao> list;
         public void loadGridView()
         {
             guna2DataGridView1.Rows.Clear();
-            List<AreaFormacao> list = area.listTodos();
+            list = area.listTodos();
             if (list.Count>0)
             {
                 guna2DataGridView1.Rows.Add(list.Count);
@@ -37,6 +37,24 @@ namespace INTERFACE.GestaoAcademica
                 }
             }
            
+        }
+        public void loadGridViewQuery()
+        {
+            guna2DataGridView1.Rows.Clear();
+            list = area.listQuery(guna2TextBox1.Text);
+            if (list.Count > 0)
+            {
+                guna2DataGridView1.Rows.Add(list.Count);
+                int row = 0;
+                foreach (AreaFormacao item in list)
+                {
+                    guna2DataGridView1.Rows[row].Cells["nome"].Value = item.area;
+
+                    guna2DataGridView1.Rows[row].Cells["duracao"].Value = item.duracao;
+                    row++;
+                }
+            }
+
         }
         AreaFormacao area = new AreaFormacao();
 
@@ -62,6 +80,35 @@ namespace INTERFACE.GestaoAcademica
             {
                 loadGridView();
             }
+        }
+
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                if (MessageBox.Show("Tem a certeza que deseja remover ?") == DialogResult.OK)
+                {
+                    if (AreaFormacao.Delete(list[e.RowIndex].id))
+                    {
+                        MessageBox.Show("Apagado do sucesso");
+                        loadGridView();
+                    }
+                }
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                AreaFormacao area = list[e.RowIndex]; 
+                FrmAreaFormacaoCadastro frmAreaCadastroEdit = new FrmAreaFormacaoCadastro(area);
+                if (frmAreaCadastroEdit.ShowDialog() == DialogResult.OK)
+                {
+                    loadGridView();
+                }
+            }
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            loadGridViewQuery();
         }
     }
 }

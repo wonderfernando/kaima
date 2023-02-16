@@ -13,9 +13,20 @@ namespace INTERFACE.GestaoAcademica
 {
     public partial class FrmCursoCadastrar : Form
     {
+        Curso curso;
         public FrmCursoCadastrar()
         {
             InitializeComponent();
+        }
+
+        public FrmCursoCadastrar(Curso curso)
+        {
+            InitializeComponent();
+            this.curso = curso;
+            lblText.Text = "EDITAR CURSO";
+            txtCurso.Text = curso.Nome;
+            txtMensalidade.Text = curso.Mensalidade.ToString();
+         
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -25,15 +36,39 @@ namespace INTERFACE.GestaoAcademica
 
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
         
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            //salvar dados no banco;
-            int t = listArea[comboFormaca.SelectedIndex].id;
-            Curso c = new Curso(txtCurso.Text,1, int.Parse(txtMensalidade.Text.ToString()));
-            this.DialogResult = DialogResult.OK;
+            if (curso!= null)
+            {
+                curso.Nome = txtCurso.Text;
+                curso.Mensalidade = float.Parse(txtMensalidade.Text);
+                curso.areaId = listArea[comboFormaca.SelectedIndex].id;
+                if (curso.Edit())
+                {
+                    MessageBox.Show("Editado com sucesso");
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            else
+            {
+                int areaId = listArea[comboFormaca.SelectedIndex].id;
+                Curso c = new Curso(txtCurso.Text,areaId, int.Parse(txtMensalidade.Text.ToString()));
+                if (c.inserir())
+                  {
+                    MessageBox.Show("Inserido com sucesso");
+                    if (MessageBox.Show("Adcionar agora as diciplinas ? ") == DialogResult.Yes)
+                    {
+                        int idCurso = Curso.getLast().Id;
+                        FrmCursoDisciplinaClasse frmCdC = new FrmCursoDisciplinaClasse(idCurso);
+                        frmCdC.ShowDialog();
+                    }
+                    this.DialogResult = DialogResult.OK;
+                  }
+            }
+        
             this.Close();
         }
 
@@ -45,7 +80,7 @@ namespace INTERFACE.GestaoAcademica
         public void loadComboArea()
         {
             comboFormaca.Items.Clear();
-            List<AreaFormacao> listArea = new AreaFormacao().listTodos();
+           listArea = new AreaFormacao().listTodos();
 
             foreach (AreaFormacao item in listArea)
             {
@@ -56,24 +91,17 @@ namespace INTERFACE.GestaoAcademica
         {
             guna2ShadowForm1.SetShadowForm(this);
             loadComboArea();
-        }
-
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            using (FrmDisciplinaCadastro frmDisci = new FrmDisciplinaCadastro())
+            if (curso!=null)
             {
-                if(frmDisci.ShowDialog() == DialogResult.OK)
-                {
-                    MessageBox.Show("reload listbox");
-                }
-               
+                comboFormaca.Text = curso.area.area;
             }
-            
         }
 
+ 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            Close();
+            new FrmCursoDisciplinaClasse(1).ShowDialog();
+            //Close();
         }
     }
 }

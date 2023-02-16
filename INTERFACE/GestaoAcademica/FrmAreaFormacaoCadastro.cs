@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUSSINESS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace INTERFACE.GestaoAcademica
 {
     public partial class FrmAreaFormacaoCadastro : Form
     {
+        AreaFormacao areaFormacao;
         public FrmAreaFormacaoCadastro()
         {
             InitializeComponent();
+        }
+        public FrmAreaFormacaoCadastro(AreaFormacao areaFormacao)
+        {
+            InitializeComponent();
+            this.areaFormacao = areaFormacao;
+            lblText.Text = "EDITAR AREA DE FORMAÇÃO";
+            txtDuracao.Text = areaFormacao.duracao.ToString();
+            txtFormacao.Text = areaFormacao.area;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,7 +44,7 @@ namespace INTERFACE.GestaoAcademica
 
         private void FrmAreaFormacaoCadastro_Load(object sender, EventArgs e)
         {
-
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -46,22 +56,37 @@ namespace INTERFACE.GestaoAcademica
         {
 
         }
-        BUSSINESS.AreaFormacao area = new BUSSINESS.AreaFormacao();
-        private void guna2Button2_Click(object sender, EventArgs e)
+       private void guna2Button2_Click(object sender, EventArgs e)
         {
-            area.area = txtFormacao.Text;
-            area.duracao = int.Parse(txtDuracao.Text);
-            if (area.inserir())
+           if (areaFormacao != null)
             {
-                 this.DialogResult = DialogResult.OK;
+                areaFormacao.area = txtFormacao.Text;
+                areaFormacao.duracao = int.Parse(txtDuracao.Text);
+                if (areaFormacao.Edit())
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.No;
+                }
             }
             else
             {
-                this.DialogResult = DialogResult.No;
-            }
+                BUSSINESS.AreaFormacao area = new BUSSINESS.AreaFormacao();
+                area.area = txtFormacao.Text;
+                area.duracao = int.Parse(txtDuracao.Text);
+                if (area.inserir())
+                {
+                     this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.No;
+                }
           
-
-            Close();
+            }
+           Close();
         }
     }
 }

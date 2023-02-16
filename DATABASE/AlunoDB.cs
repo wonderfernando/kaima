@@ -43,6 +43,18 @@ namespace DATABASE
                 return dt;
             }  
         }
+        public DataTable listQuery(string query)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            {
+                adapter.SelectCommand.Connection = con.getConection();
+                adapter.SelectCommand.CommandText = "SELECT * FROM aluno WHERE LIKE %"+query+"%";
+                adapter.Fill(dt);
+                con.desconect();
+                return dt;
+            }
+        }
         public DataTable listAlunosForEncarregadoId(int idEncarregado)
         {
             DataTable dt = new DataTable();

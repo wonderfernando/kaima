@@ -53,7 +53,7 @@ namespace BUSSINESS
             DataRow item = new ProfessorDisciplinaDB().findId(id);
             if (item != null)
             {
-                ProfessorDisciplina professorDisciplina = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString());
+                ProfessorDisciplina professorDisciplina = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
                 return professorDisciplina;
             }
             return null;

@@ -140,6 +140,18 @@
     <Compile Include="GestaoAcademica\FrmAreaFormacaoCadastro.Designer.cs">
       <DependentUpon>FrmAreaFormacaoCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestaoAcademica\FrmCursoDisciplinaClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoAcademica\FrmCursoDisciplinaClasse.Designer.cs">
+      <DependentUpon>FrmCursoDisciplinaClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoAcademica\FrmCursoDisciplinaClasseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoAcademica\FrmCursoDisciplinaClasseView.Designer.cs">
+      <DependentUpon>FrmCursoDisciplinaClasseView.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoAcademica\FrmDisciplinaCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +312,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoAcademica\FrmAreaFormacaoCadastro.resx">
       <DependentUpon>FrmAreaFormacaoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoAcademica\FrmCursoDisciplinaClasse.resx">
+      <DependentUpon>FrmCursoDisciplinaClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoAcademica\FrmCursoDisciplinaClasseView.resx">
+      <DependentUpon>FrmCursoDisciplinaClasseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoAcademica\FrmDisciplinaCurso.resx">
       <DependentUpon>FrmDisciplinaCurso.cs</DependentUpon>
@@ -636,6 +654,15 @@
       <Project>{e09e178f-c79c-46cc-9314-82e5d3178f45}</Project>
       <Name>BUSSINESS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ek.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

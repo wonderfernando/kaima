@@ -52,8 +52,14 @@
     <Compile Include="DisciplinaDB.cs" />
     <Compile Include="EncarregadoDB.cs" />
     <Compile Include="FuncionarioDB.cs" />
+    <Compile Include="MatriculaDB.cs" />
+    <Compile Include="ProfessorDB.cs" />
+    <Compile Include="ProfessorDisciplinaDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaDB.cs" />
+    <Compile Include="ClasseDisciplinaCursoDB.cs" />
+    <Compile Include="TurmaDB.cs" />
+    <Compile Include="TurmaDisciplinaProfessorDB.cs" />
     <Compile Include="TurnoDB.cs" />
     <Compile Include="UserLoginDB.cs" />
     <Compile Include="UsuarioDB.cs" />

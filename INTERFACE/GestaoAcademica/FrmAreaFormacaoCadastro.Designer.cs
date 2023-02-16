@@ -34,13 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.btnFechar = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.txtDuracao = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -87,26 +88,26 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.pnlTop.Controls.Add(this.label3);
+            this.pnlTop.Controls.Add(this.lblText);
             this.pnlTop.Controls.Add(this.btnFechar);
             this.pnlTop.Controls.Add(this.pictureBox1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(543, 50);
+            this.pnlTop.Size = new System.Drawing.Size(510, 50);
             this.pnlTop.TabIndex = 5;
             this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTop_Paint);
             // 
-            // label3
+            // lblText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(55, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "CADASTRAR AREA DE FORMAÇÃO";
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblText.ForeColor = System.Drawing.Color.LightGray;
+            this.lblText.Location = new System.Drawing.Point(55, 16);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(238, 17);
+            this.lblText.TabIndex = 9;
+            this.lblText.Text = "CADASTRAR AREA DE FORMAÇÃO";
             // 
             // btnFechar
             // 
@@ -120,7 +121,7 @@
             this.btnFechar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(25)))), ((int)(((byte)(24)))));
             this.btnFechar.HoverState.Parent = this.btnFechar;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(511, 2);
+            this.btnFechar.Location = new System.Drawing.Point(478, 2);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.ShadowDecoration.Parent = this.btnFechar;
             this.btnFechar.Size = new System.Drawing.Size(29, 47);
@@ -152,7 +153,7 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(414, 171);
+            this.guna2Button2.Location = new System.Drawing.Point(386, 171);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(112, 36);
@@ -203,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(543, 219);
+            this.ClientSize = new System.Drawing.Size(510, 219);
             this.Controls.Add(this.txtDuracao);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.guna2Button2);
@@ -233,8 +234,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtDuracao;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

@@ -16,54 +16,6 @@ namespace INTERFACE.GestaoAcademica
         public FrmCurso()
         {
             InitializeComponent();
-
-          //  Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper scroll = new Guna.UI2.WinForms.Helpers.DataGridViewScrollHelper(guna2DataGridView1, guna2VScrollBar1, false);
-          //  scroll.UpdateScrollBar();
-            guna2DataGridView1.Rows.Add(7);
-
-        //    btnApagar.Image = INTERFACE.Properties.Resources.bt;
-
-
-            guna2DataGridView1.Rows[0].Cells[0].Value = "Informatica";
-            guna2DataGridView1.Rows[0].Cells[1].Value = "Area Tecnica";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "25.000";
-            guna2DataGridView1.Rows[0].Cells[3].Value = "Visualizar";
-            guna2DataGridView1.Rows[0].Cells[4].Value = "Deletar";
-            guna2DataGridView1.Rows[0].Cells[5].Value = "Apagar";
-         
-            guna2DataGridView1.Rows[1].Cells[0].Value = "Eletronica e Telecomunicacoes";
-            guna2DataGridView1.Rows[1].Cells[1].Value = "Area Tecnica";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "25.000";
-            guna2DataGridView1.Rows[1].Cells[3].Value = "Visualizar";
-            guna2DataGridView1.Rows[1].Cells[4].Value = "Deletar";
-            guna2DataGridView1.Rows[1].Cells[5].Value = "Apagar";
-
-            guna2DataGridView1.Rows[2].Cells[0].Value = "Quimica Analitica";
-            guna2DataGridView1.Rows[2].Cells[1].Value = "Area Tecnica";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "25.000";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "Visualizar";
-            guna2DataGridView1.Rows[2].Cells[4].Value = "Deletar";
-            guna2DataGridView1.Rows[2].Cells[5].Value = "Apagar";
-
-            guna2DataGridView1.Rows[3].Cells[0].Value = "Quimica Insdustrial";
-            guna2DataGridView1.Rows[3].Cells[1].Value = "Area Tecnica";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "25.000";
-            guna2DataGridView1.Rows[3].Cells[3].Value = "Visualizar";
-            guna2DataGridView1.Rows[3].Cells[4].Value = "Deletar";
-            guna2DataGridView1.Rows[3].Cells[5].Value = "Apagar";
-
-            guna2DataGridView1.Rows[3].Cells[0].Value = "Enfermagem";
-            guna2DataGridView1.Rows[3].Cells[1].Value = "Area Saude";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "35.000";
-            guna2DataGridView1.Rows[3].Cells[3].Value = "Visualizar";
-            guna2DataGridView1.Rows[3].Cells[4].Value = "Deletar";
-            guna2DataGridView1.Rows[3].Cells[5].Value = "Apagar";
-
-     
-
-
-    
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -88,11 +40,12 @@ namespace INTERFACE.GestaoAcademica
         {
             loadDatagrid();
         }
+        List<Curso> cursos;
         public void loadDatagrid()
         {
             Curso curso = new Curso();
             int row = 0;
-            List<Curso> cursos = curso.listTodo();
+           cursos = curso.listTodo();
             guna2DataGridView1.Rows.Clear();
             if (cursos.Count > 0)
             {
@@ -110,6 +63,66 @@ namespace INTERFACE.GestaoAcademica
 
             }
         }
+        public void loadDatagridQuery()
+        {
+            Curso curso = new Curso();
+            int row = 0;
+            cursos = curso.listTodoQuery(guna2TextBox1.Text);
+            guna2DataGridView1.Rows.Clear();
+            if (cursos.Count > 0)
+            {
+                guna2DataGridView1.Rows.Add(cursos.Count);
+                foreach (Curso item in cursos)
+                {
+                    guna2DataGridView1.Rows[row].Cells["nome"].Value = item.Nome;
+                    guna2DataGridView1.Rows[row].Cells["mensalidade"].Value = item.Mensalidade;
+                    guna2DataGridView1.Rows[row].Cells["area"].Value = item.area.area;
+                    guna2DataGridView1.Rows[row].Cells["duracao"].Value = item.area.duracao;
+                    row++;
+                }
+            }
+            else
+            {
 
+            }
+        }
+
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 5:
+
+                    FrmCursoCadastrar frmCursoCadastrEdit = new FrmCursoCadastrar(cursos[e.RowIndex]);
+                    if (frmCursoCadastrEdit.ShowDialog()== DialogResult.OK)
+                    {
+                        loadDatagrid();
+                    }
+                    break;
+                case 6:
+                        if (MessageBox.Show("Tem a certeza que deseja apagar? ","",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                        Curso c = cursos[e.RowIndex];
+                            if (Curso.Delete(c.Id))
+                            {
+                                MessageBox.Show("Curso Apagado");
+                                loadDatagrid();
+                            }
+                        }
+                    break;
+
+                case 4:
+                      new FrmCursoDisciplinaClasseView(cursos[e.RowIndex].Id).ShowDialog();
+                    break;
+            }
+
+           
+            
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            loadDatagridQuery();
+        }
     }
 }

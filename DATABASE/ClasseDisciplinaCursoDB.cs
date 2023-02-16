@@ -24,7 +24,16 @@ namespace DATABASE
                 return command.ExecuteNonQuery() == 1;
             }
         }
-
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM classe_disciplina_curso WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
@@ -37,7 +46,19 @@ namespace DATABASE
                 return dt;
             }
         }
-
+        public DataTable listForClasseCurso(int idCurso, int idClasse)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM classe_disciplina_curso WHERE classe_id = @classe AND curso_id = @curso",con.getConection()))
+            { 
+                adapter.SelectCommand.Parameters.AddWithValue("@curso", idCurso);
+                adapter.SelectCommand.Parameters.AddWithValue("@classe", idClasse);
+                adapter.Fill(dt);
+                con.desconect();
+                return dt;
+            }
+        }
+        
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();

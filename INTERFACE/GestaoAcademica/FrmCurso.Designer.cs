@@ -33,23 +33,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCurso));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mensalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDisci = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnDisci = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnApagar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +132,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            this.guna2DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentDoubleClick);
             // 
             // guna2TextBox1
             // 
@@ -148,6 +155,7 @@
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(274, 36);
             this.guna2TextBox1.TabIndex = 7;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // guna2VScrollBar1
             // 
@@ -193,25 +201,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 158;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderRadius = 8;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button1.Location = new System.Drawing.Point(207, 21);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(109, 36);
-            this.guna2Button1.TabIndex = 8;
-            // 
             // Nome
             // 
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
@@ -238,15 +227,61 @@
             this.mensalidade.HeaderText = "Mensalidade";
             this.mensalidade.Name = "mensalidade";
             // 
+            // dataGridViewImageColumn2
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10);
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewImageColumn2.FillWeight = 2F;
+            this.dataGridViewImageColumn2.HeaderText = "Disciplinas";
+            this.dataGridViewImageColumn2.Image = global::INTERFACE.Properties.Resources.ek;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 116;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewImageColumn3.FillWeight = 2F;
+            this.dataGridViewImageColumn3.HeaderText = "Editar";
+            this.dataGridViewImageColumn3.Image = global::INTERFACE.Properties.Resources.Edit_50px;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.Width = 115;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle11.NullValue")));
+            this.dataGridViewImageColumn4.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewImageColumn4.FillWeight = 2F;
+            this.dataGridViewImageColumn4.HeaderText = "Apagar";
+            this.dataGridViewImageColumn4.Image = global::INTERFACE.Properties.Resources.del1;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn4.Width = 115;
+            // 
             // btnDisci
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
             this.btnDisci.DefaultCellStyle = dataGridViewCellStyle4;
             this.btnDisci.FillWeight = 2F;
-            this.btnDisci.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDisci.HeaderText = "Disciplinas";
+            this.btnDisci.Image = global::INTERFACE.Properties.Resources.ek;
+            this.btnDisci.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.btnDisci.Name = "btnDisci";
             this.btnDisci.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btnDisci.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -259,7 +294,7 @@
             this.btnEditar.DefaultCellStyle = dataGridViewCellStyle5;
             this.btnEditar.FillWeight = 2F;
             this.btnEditar.HeaderText = "Editar";
-            this.btnEditar.Image = global::INTERFACE.Properties.Resources.Edit_104px;
+            this.btnEditar.Image = global::INTERFACE.Properties.Resources.Edit_50px;
             this.btnEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -272,10 +307,29 @@
             this.btnApagar.DefaultCellStyle = dataGridViewCellStyle6;
             this.btnApagar.FillWeight = 2F;
             this.btnApagar.HeaderText = "Apagar";
-            this.btnApagar.Image = global::INTERFACE.Properties.Resources.Trash_104px;
+            this.btnApagar.Image = global::INTERFACE.Properties.Resources.del1;
             this.btnApagar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BorderRadius = 8;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Silver;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button1.Location = new System.Drawing.Point(207, 21);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(109, 36);
+            this.guna2Button1.TabIndex = 8;
             // 
             // FrmCurso
             // 
@@ -308,8 +362,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn area;
         private System.Windows.Forms.DataGridViewTextBoxColumn duracao;
         private System.Windows.Forms.DataGridViewTextBoxColumn mensalidade;
-        private System.Windows.Forms.DataGridViewButtonColumn btnDisci;
+        private System.Windows.Forms.DataGridViewImageColumn btnDisci;
         private System.Windows.Forms.DataGridViewImageColumn btnEditar;
         private System.Windows.Forms.DataGridViewImageColumn btnApagar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
     }
 }

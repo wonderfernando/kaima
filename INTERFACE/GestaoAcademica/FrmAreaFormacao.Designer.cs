@@ -67,6 +67,7 @@
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(274, 36);
             this.guna2TextBox1.TabIndex = 2;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // guna2DataGridView1
             // 
@@ -138,6 +139,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            this.guna2DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentDoubleClick);
             // 
             // guna2Button2
             // 
@@ -152,7 +154,7 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(862, 12);
+            this.guna2Button2.Location = new System.Drawing.Point(899, 12);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(126, 44);
@@ -214,7 +216,7 @@
             // 
             this.Editar.FillWeight = 30F;
             this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::INTERFACE.Properties.Resources.Edit_104px;
+            this.Editar.Image = global::INTERFACE.Properties.Resources.Edit_50px;
             this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Editar.Name = "Editar";
             this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -223,7 +225,7 @@
             // 
             this.Apagar.FillWeight = 30F;
             this.Apagar.HeaderText = "Apagar";
-            this.Apagar.Image = global::INTERFACE.Properties.Resources.Trash_104px;
+            this.Apagar.Image = global::INTERFACE.Properties.Resources.del1;
             this.Apagar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Apagar.Name = "Apagar";
             this.Apagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;

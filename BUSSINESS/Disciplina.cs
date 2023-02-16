@@ -18,11 +18,16 @@ namespace BUSSINESS
         {
             this.disciplina = disciplina;
         }
+        public Disciplina(int id , string disciplina)
+        {
+            this.disciplina = disciplina;
+            this.id = id;
+        }
         public Disciplina()
         {
             
         }
-        bool result;
+    
         public bool inserir()
         {
             DisciplinaDB disciplinaDB = new DisciplinaDB();
@@ -35,7 +40,7 @@ namespace BUSSINESS
             DisciplinaDB disciplinasDB = new DisciplinaDB();
             foreach (DataRow item in disciplinasDB.listTodos().Rows)
             {
-                disciplinas.Add(new Disciplina(item["disciplina"].ToString()));
+                disciplinas.Add(new Disciplina(int.Parse(item["id"].ToString()),item["disciplina"].ToString()));
             }
             return disciplinas;
         }
@@ -46,10 +51,10 @@ namespace BUSSINESS
         }
         public static Disciplina findId(int id)
         {
-            DataRow item = new ClasseDB().findId(id);
+            DataRow item = new DisciplinaDB().findId(id);
             if (item != null)
             {
-                Disciplina disc = new Disciplina(item["disciplina"].ToString());
+                Disciplina disc = new Disciplina(int.Parse(item["id"].ToString()), item["disciplina"].ToString());
                 return disc;
             }
             return null;

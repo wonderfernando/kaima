@@ -40,10 +40,18 @@
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.shadowDisciContainer = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.label9 = new System.Windows.Forms.Label();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
             this.bunifuCards3.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
+            this.shadowDisciContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -194,11 +202,86 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Alunos";
             // 
+            // shadowDisciContainer
+            // 
+            this.shadowDisciContainer.BackColor = System.Drawing.Color.Transparent;
+            this.shadowDisciContainer.Controls.Add(this.panel1);
+            this.shadowDisciContainer.FillColor = System.Drawing.Color.Transparent;
+            this.shadowDisciContainer.Location = new System.Drawing.Point(88, 209);
+            this.shadowDisciContainer.Name = "shadowDisciContainer";
+            this.shadowDisciContainer.ShadowColor = System.Drawing.Color.Black;
+            this.shadowDisciContainer.ShadowDepth = 20;
+            this.shadowDisciContainer.ShadowShift = 10;
+            this.shadowDisciContainer.Size = new System.Drawing.Size(338, 235);
+            this.shadowDisciContainer.TabIndex = 29;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.guna2CircleButton1);
+            this.panel1.Controls.Add(this.checkedListBoxControl1);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Location = new System.Drawing.Point(9, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(318, 207);
+            this.panel1.TabIndex = 31;
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.Animated = true;
+            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Silver;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Image = global::INTERFACE.Properties.Resources.Plus_Math_52px;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(271, 3);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(38, 38);
+            this.guna2CircleButton1.TabIndex = 30;
+            // 
+            // checkedListBoxControl1
+            // 
+            this.checkedListBoxControl1.Appearance.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.checkedListBoxControl1.Appearance.Options.UseFont = true;
+            this.checkedListBoxControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.checkedListBoxControl1.ItemPadding = new System.Windows.Forms.Padding(5);
+            this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Lingua Portuguesa", "", ((short)(0))),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Matematica", "", ((short)(1))),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Fisica", "", ((short)(2))),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null)});
+            this.checkedListBoxControl1.Location = new System.Drawing.Point(17, 44);
+            this.checkedListBoxControl1.Name = "checkedListBoxControl1";
+            this.checkedListBoxControl1.Size = new System.Drawing.Size(282, 148);
+            this.checkedListBoxControl1.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.Location = new System.Drawing.Point(17, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 20);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Disciplina";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 471);
+            this.Controls.Add(this.shadowDisciContainer);
             this.Controls.Add(this.bunifuCards4);
             this.Controls.Add(this.bunifuCards3);
             this.Controls.Add(this.bunifuCards2);
@@ -213,6 +296,10 @@
             this.bunifuCards3.PerformLayout();
             this.bunifuCards4.ResumeLayout(false);
             this.bunifuCards4.PerformLayout();
+            this.shadowDisciContainer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkedListBoxControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +318,10 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2ShadowPanel shadowDisciContainer;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
+        private System.Windows.Forms.Label label9;
     }
 }

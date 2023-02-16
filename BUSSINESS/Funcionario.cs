@@ -40,7 +40,10 @@ namespace BUSSINESS
             this.Sexo = Sexo;
             this.IdCargo = Id;
         }
-
+        public bool Insert()
+        {
+            return funcionarioDB.Insert(this.Nome,this.Telefone,this.Morada,this.Sexo, this.IdCargo);
+        }
         FuncionarioDB funcionarioDB = new FuncionarioDB();
         public List<Funcionario> listTodos()
         {

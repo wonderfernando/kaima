@@ -60,13 +60,11 @@ namespace DATABASE
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM disciplinas WHERE id = @id",conection.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM disciplinas WHERE id = @id";
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
-                con.desconect();
+                conection.desconect();
                 DataRow drow = dt.Rows[0];
                 return drow;
             }

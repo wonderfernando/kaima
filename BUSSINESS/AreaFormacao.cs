@@ -25,7 +25,7 @@ namespace BUSSINESS
              DataTable dt = new AreaFormacaoDB().findId(id);
             if (dt.Rows.Count > 0)
             {
-                return new AreaFormacao(int.Parse(dt.Rows[0]["duracao"].ToString()), dt.Rows[0]["nome"].ToString(),int.Parse(dt.Rows[0]["duracao"].ToString()));
+                return new AreaFormacao(int.Parse(dt.Rows[0]["id"].ToString()), dt.Rows[0]["nome"].ToString(),int.Parse(dt.Rows[0]["duracao"].ToString()));
             }
             return null;
         }
@@ -46,7 +46,7 @@ namespace BUSSINESS
             List<AreaFormacao> areaFormacaos = new List<AreaFormacao>(); 
             foreach (DataRow item in areaDB.listTodos().Rows)
             {
-                areaFormacaos.Add(new AreaFormacao(item["nome"].ToString(), int.Parse(item["duracao"].ToString())));
+                areaFormacaos.Add(new AreaFormacao(int.Parse(item["id"].ToString()), item["nome"].ToString(), int.Parse(item["duracao"].ToString())));
             }
             return areaFormacaos;
         }
@@ -56,5 +56,33 @@ namespace BUSSINESS
             return areaDB.inserir(this.area, this.duracao);
 
         }
+
+        public bool Edit()
+        {
+            return areaDB.Edit(this.id, this.area, this.duracao);
+
+        }
+
+        public bool Delete()
+        {
+            return areaDB.DELETE(this.id);
+        }
+        public static bool Delete(int Id)
+        {
+            return new AreaFormacaoDB().DELETE(Id);
+        }
+        public List<AreaFormacao> listQuery(string query)
+        {
+            List<AreaFormacao> areas = new List<AreaFormacao>();
+            DataTable dt = areaDB.listQuery(query);
+            foreach (DataRow item in dt.Rows)
+            {
+                AreaFormacao area = new AreaFormacao(int.Parse(item["id"].ToString()), item["nome"].ToString(), int.Parse(item["duracao"].ToString()));
+                areas.Add(area);
+            }
+            return areas;
+        }
+
+
     }
 }
