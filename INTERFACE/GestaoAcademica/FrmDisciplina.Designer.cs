@@ -112,6 +112,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
+            this.guna2DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentDoubleClick);
             // 
             // guna2Button2
             // 
@@ -186,7 +187,7 @@
             this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Editar.FillWeight = 1F;
             this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::INTERFACE.Properties.Resources.Edit_104px;
+            this.Editar.Image = global::INTERFACE.Properties.Resources.Edit_50px;
             this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Editar.Name = "Editar";
             this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -195,7 +196,7 @@
             // 
             this.Apagar.FillWeight = 1F;
             this.Apagar.HeaderText = "Apagar";
-            this.Apagar.Image = global::INTERFACE.Properties.Resources.Trash_104px;
+            this.Apagar.Image = global::INTERFACE.Properties.Resources.del1;
             this.Apagar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Apagar.Name = "Apagar";
             this.Apagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;

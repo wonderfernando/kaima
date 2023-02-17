@@ -27,12 +27,12 @@ namespace INTERFACE.GestaoAcademica
         public void loadDatagrid()
         {
             int row = 0;
-            List<Sala> salas = sala.listTodos();
+            listSala = sala.listTodos();
             guna2DataGridView1.Rows.Clear();
-            if (salas.Count>0)
+            if (listSala.Count>0)
             {
-                guna2DataGridView1.Rows.Add(salas.Count);
-                foreach (Sala item in salas)
+                guna2DataGridView1.Rows.Add(listSala.Count);
+                foreach (Sala item in listSala)
                 {
                     guna2DataGridView1.Rows[row].Cells["nome"].Value = item.nome;
                     guna2DataGridView1.Rows[row].Cells["capacidade"].Value = item.capacidade;
@@ -45,7 +45,7 @@ namespace INTERFACE.GestaoAcademica
                 MessageBox.Show("Nenhuma sala cadastrada");
             }
         }
-
+        List<Sala> listSala;
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             FrmSalaCadastro frm = new FrmSalaCadastro();
@@ -57,6 +57,30 @@ namespace INTERFACE.GestaoAcademica
             {
                 MessageBox.Show("Nao foi possivel cadastrar a sala");
             }
+        }
+
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 3:
+                    FrmSalaCadastro frmSalaEdit = new FrmSalaCadastro(listSala[e.RowIndex]);
+                    frmSalaEdit.ShowDialog();
+                    loadDatagrid();
+                    break;
+                case 4:
+                    if (MessageBox.Show("Deseja apagar essa sala?","",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Sala.DELETE(listSala[e.RowIndex].Id);
+                        loadDatagrid();
+                    }
+                    break;
+            }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

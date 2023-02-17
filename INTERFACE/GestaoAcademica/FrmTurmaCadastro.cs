@@ -13,9 +13,20 @@ namespace INTERFACE.GestaoAcademica
 {
     public partial class FrmTurmaCadastro : Form
     {
+        Turma turma;
         public FrmTurmaCadastro()
         {
             InitializeComponent();
+        }
+        public FrmTurmaCadastro(Turma turma)
+        {
+            InitializeComponent();
+            this.turma = turma;
+            txtTurma.Text = turma.Nome;
+            txtAno.Text = turma.AnoLectivo.Ano;
+            lblText.Text = "EDITAR TURMA";
+            pnlProf.Visible = false;
+          
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,8 +42,16 @@ namespace INTERFACE.GestaoAcademica
             loadSala();
             loadTurno();
             loadRes();
-            loadDisci();
+            //loadDisci();
             txtAno.Text = AnoLectivo.getLast().Ano;
+            if (turma != null)
+            {
+                cmbClasse.Text = turma.Classe.Nome;
+                cmbRes.Text = turma.Professor.Funcionario.Nome;
+                cmbCurso.Text = turma.Curso.Nome;
+                cmbTurno.Text = turma.Turno.nome;
+                cmbSala.Text = turma.Sala.nome;
+            }
         }
         List<Classe> listClasse;
         List<Curso> listCurso;
@@ -106,12 +125,36 @@ namespace INTERFACE.GestaoAcademica
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Turma t = new Turma(txtTurma.Text, listCurso[cmbCurso.SelectedIndex].Id, listClasse[cmbClasse.SelectedIndex].Id, listTurno[cmbTurno.SelectedIndex].Id, listRes[cmbRes.SelectedIndex].Id, AnoLectivo.getLast().Id, listSala[cmbSala.SelectedIndex].Id); ;
-            if (t.Insert())
+            if (turma==null)
             {
-                MessageBox.Show("Inserido com sucesso");
-                DialogResult = DialogResult.OK;
+                Turma t = new Turma(txtTurma.Text, listCurso[cmbCurso.SelectedIndex].Id, listClasse[cmbClasse.SelectedIndex].Id, listTurno[cmbTurno.SelectedIndex].Id, listRes[cmbRes.SelectedIndex].Id, AnoLectivo.getLast().Id, listSala[cmbSala.SelectedIndex].Id); ;
+                if (t.Insert())
+                {
+                    int idTurma = Turma.getLast().Id;
+                    foreach (TurmaDisciplinaProfessor item in newProfDiscTurma)
+                    {
+                        item.IdTurma = idTurma;
+                        item.inserir();
+                    }
+                    MessageBox.Show("Inserido com sucesso");
+                    DialogResult = DialogResult.OK;
+                }
             }
+            else
+            {
+                turma.Nome = txtTurma.Text;
+                turma.IdClasse = listClasse[cmbClasse.SelectedIndex].Id;
+                turma.IdCurso = listCurso[cmbCurso.SelectedIndex].Id;
+                turma.IdProf = listRes[cmbRes.SelectedIndex].Id;
+                turma.IdSala = listSala[cmbSala.SelectedIndex].Id;
+                turma.IdTurno = listTurno[cmbTurno.SelectedIndex].Id;
+                if (turma.Edit())
+                {
+                    MessageBox.Show("Editado com sucesso");
+                    DialogResult = DialogResult.OK;
+                }
+            }
+            
             Close();
         }
 
@@ -123,7 +166,7 @@ namespace INTERFACE.GestaoAcademica
         public void loadCombProf()
         {
             cmbProf.Items.Clear();
-            profDisc = ProfessorDisciplina.listTodosByDiscId(listDisciplina[cmbDisci.SelectedIndex].id);
+            profDisc = ProfessorDisciplina.listTodosByDiscId(listCdD[cmbDisci.SelectedIndex].IdDisciplina);
             foreach (ProfessorDisciplina item in profDisc)
             {
                 cmbProf.Items.Add(item.Professor.Funcionario.Nome);
@@ -137,22 +180,55 @@ namespace INTERFACE.GestaoAcademica
             }
         }
         List<ProfessorDisciplina> newProfDisc = new List<ProfessorDisciplina>();
+        List<TurmaDisciplinaProfessor> newProfDiscTurma = new List<TurmaDisciplinaProfessor>();
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            bool exits = false;
-           
-            for (int i = 0; i < newProfDisc.Count; i++)
+           ////Remover caso aquela disciplina ja estema adicionada
+            for (int i = 0; i < newProfDiscTurma.Count; i++)
             {
-                if (newProfDisc[i].IdDisciplina == listDisciplina[cmbDisci.SelectedIndex].id)
+                if (newProfDiscTurma[i].IdDisciplina == listCdD[cmbDisci.SelectedIndex].IdDisciplina)
                 {
-                    newProfDisc.RemoveAt(i);
+                    newProfDiscTurma.RemoveAt(i);
                     lsboxProf.Items.RemoveAt(i);
                 }
             }
-            
-                newProfDisc.Add(new ProfessorDisciplina(profDisc[cmbProf.SelectedIndex].Id, listDisciplina[cmbDisci.SelectedIndex].id));
+
+            //Adiciona o item no listBox e no Array
+                newProfDiscTurma.Add(new TurmaDisciplinaProfessor(profDisc[cmbProf.SelectedIndex].IdProfessor, 0 , listCdD[cmbDisci.SelectedIndex].IdDisciplina));
                 lsboxProf.Items.Add(cmbProf.SelectedItem.ToString() + " (" + cmbDisci.SelectedItem.ToString() + ")");
             
+        }
+        List<ClasseDisciplinaCurso> listCdD; 
+       
+        private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbClasse.SelectedIndex >= 0 && cmbCurso.SelectedIndex>=0)
+            {
+                cmbDisci.Items.Clear();
+                listCdD = ClasseDisciplinaCurso.listForClasseCurso(listCurso[cmbCurso.SelectedIndex].Id, listClasse[cmbClasse.SelectedIndex].Id);
+                foreach (ClasseDisciplinaCurso item in listCdD)
+                {
+                    cmbDisci.Items.Add(item.Disciplina.disciplina);
+                }
+            }
+        }
+
+        private void pnlProf_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbClasse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbClasse.SelectedIndex >= 0 && cmbCurso.SelectedIndex >= 0)
+            {
+                cmbDisci.Items.Clear();
+                listCdD = ClasseDisciplinaCurso.listForClasseCurso(listCurso[cmbCurso.SelectedIndex].Id, listClasse[cmbClasse.SelectedIndex].Id);
+                foreach (ClasseDisciplinaCurso item in listCdD)
+                {
+                    cmbDisci.Items.Add(item.Disciplina.disciplina);
+                }
+            }
         }
     }
 }

@@ -13,14 +13,16 @@ namespace INTERFACE.GestaoAcademica
 {
     public partial class FrmDisciplina : Form
     {
+        List<Disciplina> listDisci;
         public FrmDisciplina()
         {
             InitializeComponent();
         }
         public void loadGridView()
         {
+             listDisci = disci.listTodo();
              guna2DataGridView1.Rows.Clear();
-             guna2DataGridView1.Rows.Add(disci.listTodo().Count);
+             guna2DataGridView1.Rows.Add(listDisci.Count);
              int row = 0;
              foreach (Disciplina item in disci.listTodo())
              {
@@ -31,29 +33,7 @@ namespace INTERFACE.GestaoAcademica
 
         private void FrmDisciplina_Load(object sender, EventArgs e)
         {
-
             loadGridView();
-
-            /*
-           
-
-            guna2DataGridView1.Rows[0].Cells[0].Value = "Lingua Portuguesa";
-            guna2DataGridView1.Rows[0].Cells[1].Value = "Editar";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "Apagar";
-
-            guna2DataGridView1.Rows[1].Cells[0].Value = "Matematia";
-            guna2DataGridView1.Rows[1].Cells[1].Value = "Editar";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "Apagar";
-
-            guna2DataGridView1.Rows[2].Cells[0].Value = "Fisica";
-            guna2DataGridView1.Rows[2].Cells[1].Value = "Editar";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "Apagar";
-
-            guna2DataGridView1.Rows[3].Cells[0].Value = "Quimica";
-            guna2DataGridView1.Rows[3].Cells[1].Value = "Editar";
-            guna2DataGridView1.Rows[3].Cells[2].Value = "Apagar";
-
-    */
         }
         Disciplina disci = new Disciplina();
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -68,6 +48,27 @@ namespace INTERFACE.GestaoAcademica
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    FrmDisciplinaCadastro frmDisciCadastro = new FrmDisciplinaCadastro(listDisci[e.RowIndex]);
+                    if (frmDisciCadastro.ShowDialog() == DialogResult.OK)
+                    {
+                        loadGridView();
+                    }
+                    break;
+                case 2:
+                    if (MessageBox.Show("Deseja apagar essa disciplina ?")== DialogResult.OK)
+                    {
+                        Disciplina.DELETE(listDisci[e.RowIndex].id);
+                        loadGridView();
+                    }
+                    break;
+            }
         }
     }
 }

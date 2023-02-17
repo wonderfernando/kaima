@@ -32,6 +32,7 @@ namespace INTERFACE.GestaoAcademica
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             new FrmTurmaCadastro().ShowDialog();
+            loadGrid();
         }
         List<Turma> listTurma;
         public void loadGrid()
@@ -56,6 +57,37 @@ namespace INTERFACE.GestaoAcademica
                                      
             }
     
+        }
+
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case  10:
+                    if (MessageBox.Show("Deseja eliminar essa turma?","", MessageBoxButtons.YesNo)== DialogResult.Yes)
+                    {
+                        if (Turma.DELETE(listTurma[e.RowIndex].Id))
+                        {
+                            loadGrid();
+                        }
+                    }
+                    break;
+                case 9:
+                    FrmTurmaCadastro frmCadastroEdit = new FrmTurmaCadastro(listTurma[e.RowIndex]);
+                    if (frmCadastroEdit.ShowDialog()== DialogResult.OK)
+                    {
+                        loadGrid();
+                    }
+                    break;
+                case 8:
+                    FrmTurmaProfessoreView frm = new FrmTurmaProfessoreView(listTurma[e.RowIndex]);
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        loadGrid();
+                    }
+                    break;
+
+            }
         }
     }
 }

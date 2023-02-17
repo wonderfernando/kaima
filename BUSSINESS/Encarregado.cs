@@ -40,6 +40,15 @@ namespace BUSSINESS
         {
             return encarregadoDB.Insert(this.Nome, this.Telefone, this.Email, this.Sexo);
         }
+        public bool Edit()
+        {
+            return encarregadoDB.Edit(this.Id,this.Nome, this.Telefone, this.Email, this.Sexo);
+        }
+
+        public static bool DELETE(int id)
+        {
+            return new EncarregadoDB().DELETE(id);
+        }
         public static Encarregado findId(int id)
         {
             DataRow dt = new EncarregadoDB().findId(id);
@@ -64,7 +73,7 @@ namespace BUSSINESS
         }
         public List<Encarregado> listTodos()
         {
-            DataTable dt = new AlunoDB().listTodos();
+            DataTable dt = new EncarregadoDB().listTodos();
             List<Encarregado> encarregados = new List<Encarregado>();
             foreach (DataRow item in dt.Rows)
             {

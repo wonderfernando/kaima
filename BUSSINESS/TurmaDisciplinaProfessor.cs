@@ -41,6 +41,10 @@ namespace BUSSINESS
         {
             return turmaDisciplinaProfessorDB.Insert(this.IdProfessor, this.IdDisciplina, this.IdTurma);
         }
+        public static bool DELETE(int id)
+        {
+            return new TurmaDisciplinaProfessorDB().DELETE(id);
+        }
         TurmaDisciplinaProfessorDB turmaDisciplinaProfessorDB = new TurmaDisciplinaProfessorDB();
         public List<TurmaDisciplinaProfessor> listTodo()
         {
@@ -57,13 +61,29 @@ namespace BUSSINESS
             }
             return turmaDisciplinaProfessores;
         }
-      
+
+        public static List<TurmaDisciplinaProfessor> listTodoForTurmaId(int idTurma)
+        {
+            List<TurmaDisciplinaProfessor> turmaDisciplinaProfessores = new List<TurmaDisciplinaProfessor>();
+
+            foreach (DataRow item in new TurmaDisciplinaProfessorDB().listTodoForTurmaId(idTurma).Rows)
+            {
+                TurmaDisciplinaProfessor turmasDisc = new TurmaDisciplinaProfessor(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
+                turmasDisc.Turma = BUSSINESS.Turma.findId(int.Parse(item["turma_id"].ToString()));
+                turmasDisc.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
+                turmasDisc.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));
+
+                turmaDisciplinaProfessores.Add(turmasDisc);
+            }
+            return turmaDisciplinaProfessores;
+        }
+
         public static TurmaDisciplinaProfessor findId(int id)
         {
             DataRow item = new TurmaDisciplinaProfessorDB().findId(id);
             if (item != null)
             {
-                TurmaDisciplinaProfessor turmasDisc = new TurmaDisciplinaProfessor(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()), int.Parse(item["turma_id"].ToString()));
+                TurmaDisciplinaProfessor turmasDisc = new TurmaDisciplinaProfessor(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
                 turmasDisc.Turma = BUSSINESS.Turma.findId(int.Parse(item["turma_id"].ToString()));
                 turmasDisc.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
                 turmasDisc.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));

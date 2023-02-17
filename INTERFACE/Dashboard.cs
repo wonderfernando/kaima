@@ -668,7 +668,7 @@ namespace INTERFACE
 
         private void guna2Button7_Click_2(object sender, EventArgs e)
         {
-            lblSource.Text = "Aluno";
+            lblSource.Text = "Encarregado";
             hideSubMenu();
             resetButtonMenu();
             (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;

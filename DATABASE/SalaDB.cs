@@ -30,6 +30,31 @@ namespace DATABASE
                 return false;
             }
         }
+
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM sala WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+        
+        public bool Edit(int Id, string Nome, int Capacidade, string Tipo)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE sala SET nome = @nome, capacidade = @capacidade, tipo = @tipo  WHERE id = @id";
+                command.Parameters.AddWithValue("@nome", Nome);
+                command.Parameters.AddWithValue("@capacidade", Capacidade);
+                command.Parameters.AddWithValue("@tipo", Tipo);
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();

@@ -24,6 +24,32 @@ namespace DATABASE
             return result == 1;
             
         }
+
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM turno WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+        public bool Edit(int Id, string Nome, string Inicio, string Final)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE turno SET nome = @nome, inicio = @inicio, final = @final WHERE id = @id";
+
+                command.Parameters.AddWithValue("@nome", Nome);
+                command.Parameters.AddWithValue("@final", Final);
+                command.Parameters.AddWithValue("@inicio", Inicio);
+                command.Parameters.AddWithValue("@id", Id);
+
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
@@ -48,8 +74,9 @@ namespace DATABASE
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                if(dt.Rows.Count>0)
+                return dt.Rows[0];
+                return null;
             }
         }
 

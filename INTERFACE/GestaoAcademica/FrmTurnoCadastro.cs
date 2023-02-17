@@ -17,6 +17,16 @@ namespace INTERFACE.GestaoAcademica
         {
             InitializeComponent();
         }
+        Turno turno;
+        public FrmTurnoCadastro(Turno turno)
+        {
+            InitializeComponent();
+            this.turno = turno;
+            lblText.Text = "EDITAR TURNO";
+            txtTurno.Text = turno.nome;
+            txtInicio.Text = turno.inicio;
+            txtFinal.Text = turno.final;
+        }
 
         private void FrmTurnoCadastro_Load(object sender, EventArgs e)
         {
@@ -31,16 +41,29 @@ namespace INTERFACE.GestaoAcademica
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Turno turno = new Turno(txtTurno.Text,txtInicio.Text,txtFinal.Text);
-            if (turno.inserir())
+            if (turno== null)
             {
-                this.DialogResult = DialogResult.OK;
 
+                Turno turno = new Turno(txtTurno.Text, txtInicio.Text, txtFinal.Text);
+                if (turno.inserir())
+                {
+                    MessageBox.Show("Inserido com sucesso");
+                    this.DialogResult = DialogResult.OK;
+
+                }
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                turno.nome = txtTurno.Text;
+                turno.inicio = txtInicio.Text;
+                turno.final = txtFinal.Text;
+                if (turno.Edit())
+                {
+                    MessageBox.Show("Editado com sucesso");
+                    DialogResult = DialogResult.OK;
+                }
             }
+          
             Close();
         }
     }

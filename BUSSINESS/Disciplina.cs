@@ -34,7 +34,17 @@ namespace BUSSINESS
             return disciplinaDB.inserir(this.disciplina);
         }
 
-         public List<Disciplina> listTodo()
+        public static bool DELETE(int id)
+        {
+         
+            return new DisciplinaDB().DELETE(id);
+        }
+        public bool Edit()
+        {
+            return new DisciplinaDB().Edit(this.id, this.disciplina);
+        }
+
+        public List<Disciplina> listTodo()
         {
             List<Disciplina> disciplinas = new List<Disciplina>();
             DisciplinaDB disciplinasDB = new DisciplinaDB();

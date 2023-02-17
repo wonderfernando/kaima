@@ -34,13 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfessor));
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Apagar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,9 +66,7 @@
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.Column2,
-            this.Column1,
-            this.Editar,
-            this.Apagar});
+            this.Column1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -114,45 +110,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 40;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Nome
-            // 
-            this.Nome.FillWeight = 6F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 1F;
-            this.Column2.HeaderText = "Turmas";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column2.Text = "Visualizar";
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 1F;
-            this.Column1.HeaderText = "Disciplinas";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column1.Text = "Visualizar";
-            // 
-            // Editar
-            // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Editar.FillWeight = 1F;
-            this.Editar.HeaderText = "Acções";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Editar";
-            // 
-            // Apagar
-            // 
-            this.Apagar.FillWeight = 1F;
-            this.Apagar.HeaderText = "";
-            this.Apagar.Name = "Apagar";
-            this.Apagar.Text = "Apagar";
+            this.guna2DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentDoubleClick);
             // 
             // guna2TextBox1
             // 
@@ -197,6 +155,32 @@
             this.guna2Button1.TabIndex = 25;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // Nome
+            // 
+            this.Nome.FillWeight = 6F;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 1F;
+            this.Column2.HeaderText = "Turmas";
+            this.Column2.Image = global::INTERFACE.Properties.Resources.ek;
+            this.Column2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 1F;
+            this.Column1.HeaderText = "Disciplinas";
+            this.Column1.Image = global::INTERFACE.Properties.Resources.ek;
+            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FrmProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +192,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProfessor";
             this.Text = "FrmProfessor";
+            this.Load += new System.EventHandler(this.FrmProfessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -219,9 +204,7 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Apagar;
+        private System.Windows.Forms.DataGridViewImageColumn Column2;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
     }
 }

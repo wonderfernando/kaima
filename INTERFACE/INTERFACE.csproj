@@ -116,6 +116,18 @@
     <Compile Include="FrmAlunoView.Designer.cs">
       <DependentUpon>FrmAlunoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEncarregado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEncarregado.Designer.cs">
+      <DependentUpon>FrmEncarregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTurmaProfessoreView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTurmaProfessoreView.Designer.cs">
+      <DependentUpon>FrmTurmaProfessoreView.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoAcademica\FrmAnolectvo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +272,18 @@
     <Compile Include="GestaoAdministrativa\FrmProfessor.Designer.cs">
       <DependentUpon>FrmProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestaoAdministrativa\FrmProfessorDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoAdministrativa\FrmProfessorDisciplina.Designer.cs">
+      <DependentUpon>FrmProfessorDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestaoAdministrativa\FrmProfessorDisciplinaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoAdministrativa\FrmProfessorDisciplinaView.Designer.cs">
+      <DependentUpon>FrmProfessorDisciplinaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestaoAdministrativa\FrmProfessorDisplina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAlunoView.resx">
       <DependentUpon>FrmAlunoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEncarregado.resx">
+      <DependentUpon>FrmEncarregado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTurmaProfessoreView.resx">
+      <DependentUpon>FrmTurmaProfessoreView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoAcademica\FrmAnolectvo.resx">
       <DependentUpon>FrmAnolectvo.cs</DependentUpon>
@@ -372,6 +402,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoAdministrativa\FrmProfessor.resx">
       <DependentUpon>FrmProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoAdministrativa\FrmProfessorDisciplina.resx">
+      <DependentUpon>FrmProfessorDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoAdministrativa\FrmProfessorDisciplinaView.resx">
+      <DependentUpon>FrmProfessorDisciplinaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoAdministrativa\FrmProfessorDisplina.resx">
       <DependentUpon>FrmProfessorDisplina.cs</DependentUpon>

@@ -40,6 +40,29 @@ namespace DATABASE
             }
 
         }
+        public bool Edit(int Id, string Nome)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = conection.getConection();
+                command.CommandText = "UPDATE disciplinas SET disciplina = @disc WHERE id = @id";
+                command.Parameters.AddWithValue("@disc", Nome);
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+
+
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = conection.getConection();
+                command.CommandText = "DELETE FROM disciplinas WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();

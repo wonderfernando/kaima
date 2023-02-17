@@ -42,9 +42,7 @@
             this.cmbRes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnFechar = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblText = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -63,12 +61,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmbDisci = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnFechar = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlProf.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lsboxProf)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -133,16 +133,13 @@
             this.cmbCurso.FormattingEnabled = true;
             this.cmbCurso.HoverState.Parent = this.cmbCurso;
             this.cmbCurso.ItemHeight = 30;
-            this.cmbCurso.Items.AddRange(new object[] {
-            "Informatica",
-            "Quimica",
-            "Mecanica"});
             this.cmbCurso.ItemsAppearance.Parent = this.cmbCurso;
             this.cmbCurso.Location = new System.Drawing.Point(392, 95);
             this.cmbCurso.Name = "cmbCurso";
             this.cmbCurso.ShadowDecoration.Parent = this.cmbCurso;
             this.cmbCurso.Size = new System.Drawing.Size(310, 36);
             this.cmbCurso.TabIndex = 22;
+            this.cmbCurso.SelectedIndexChanged += new System.EventHandler(this.cmbCurso_SelectedIndexChanged);
             // 
             // cmbClasse
             // 
@@ -168,6 +165,7 @@
             this.cmbClasse.ShadowDecoration.Parent = this.cmbClasse;
             this.cmbClasse.Size = new System.Drawing.Size(337, 36);
             this.cmbClasse.TabIndex = 24;
+            this.cmbClasse.SelectedIndexChanged += new System.EventHandler(this.cmbClasse_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -194,10 +192,6 @@
             this.cmbTurno.FormattingEnabled = true;
             this.cmbTurno.HoverState.Parent = this.cmbTurno;
             this.cmbTurno.ItemHeight = 30;
-            this.cmbTurno.Items.AddRange(new object[] {
-            "Informatica",
-            "Quimica",
-            "Mecanica"});
             this.cmbTurno.ItemsAppearance.Parent = this.cmbTurno;
             this.cmbTurno.Location = new System.Drawing.Point(390, 166);
             this.cmbTurno.Name = "cmbTurno";
@@ -241,10 +235,6 @@
             this.cmbRes.FormattingEnabled = true;
             this.cmbRes.HoverState.Parent = this.cmbRes;
             this.cmbRes.ItemHeight = 30;
-            this.cmbRes.Items.AddRange(new object[] {
-            "Informatica",
-            "Quimica",
-            "Mecanica"});
             this.cmbRes.ItemsAppearance.Parent = this.cmbRes;
             this.cmbRes.Location = new System.Drawing.Point(718, 96);
             this.cmbRes.Name = "cmbRes";
@@ -277,7 +267,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.pnlTop.Controls.Add(this.label10);
+            this.pnlTop.Controls.Add(this.lblText);
             this.pnlTop.Controls.Add(this.btnFechar);
             this.pnlTop.Controls.Add(this.pictureBox1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -286,46 +276,16 @@
             this.pnlTop.Size = new System.Drawing.Size(1021, 50);
             this.pnlTop.TabIndex = 36;
             // 
-            // label10
+            // lblText
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.ForeColor = System.Drawing.Color.LightGray;
-            this.label10.Location = new System.Drawing.Point(55, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 17);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "CADASTRAR CURSO";
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.CheckedState.Parent = this.btnFechar;
-            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechar.CustomImages.Parent = this.btnFechar;
-            this.btnFechar.FillColor = System.Drawing.Color.Transparent;
-            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnFechar.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(25)))), ((int)(((byte)(24)))));
-            this.btnFechar.HoverState.Parent = this.btnFechar;
-            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(989, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.ShadowDecoration.Parent = this.btnFechar;
-            this.btnFechar.Size = new System.Drawing.Size(29, 47);
-            this.btnFechar.TabIndex = 9;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::INTERFACE.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(-54, -64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 185);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblText.ForeColor = System.Drawing.Color.LightGray;
+            this.lblText.Location = new System.Drawing.Point(55, 16);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(145, 17);
+            this.lblText.TabIndex = 9;
+            this.lblText.Text = "CADASTRAR TURMA";
             // 
             // guna2Elipse1
             // 
@@ -350,10 +310,6 @@
             this.cmbSala.FormattingEnabled = true;
             this.cmbSala.HoverState.Parent = this.cmbSala;
             this.cmbSala.ItemHeight = 30;
-            this.cmbSala.Items.AddRange(new object[] {
-            "Informatica",
-            "Quimica",
-            "Mecanica"});
             this.cmbSala.ItemsAppearance.Parent = this.cmbSala;
             this.cmbSala.Location = new System.Drawing.Point(718, 166);
             this.cmbSala.Name = "cmbSala";
@@ -417,6 +373,7 @@
             this.pnlProf.Name = "pnlProf";
             this.pnlProf.Size = new System.Drawing.Size(733, 300);
             this.pnlProf.TabIndex = 43;
+            this.pnlProf.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProf_Paint);
             // 
             // label9
             // 
@@ -514,10 +471,6 @@
             this.cmbProf.FormattingEnabled = true;
             this.cmbProf.HoverState.Parent = this.cmbProf;
             this.cmbProf.ItemHeight = 30;
-            this.cmbProf.Items.AddRange(new object[] {
-            "Informatica",
-            "Quimica",
-            "Mecanica"});
             this.cmbProf.ItemsAppearance.Parent = this.cmbProf;
             this.cmbProf.Location = new System.Drawing.Point(25, 123);
             this.cmbProf.Name = "cmbProf";
@@ -549,10 +502,6 @@
             this.cmbDisci.FormattingEnabled = true;
             this.cmbDisci.HoverState.Parent = this.cmbDisci;
             this.cmbDisci.ItemHeight = 30;
-            this.cmbDisci.Items.AddRange(new object[] {
-            "Informatica",
-            "Quimica",
-            "Mecanica"});
             this.cmbDisci.ItemsAppearance.Parent = this.cmbDisci;
             this.cmbDisci.Location = new System.Drawing.Point(27, 49);
             this.cmbDisci.Name = "cmbDisci";
@@ -571,6 +520,36 @@
             this.label6.Size = new System.Drawing.Size(175, 20);
             this.label6.TabIndex = 36;
             this.label6.Text = "Professores (Disciplina)";
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.CheckedState.Parent = this.btnFechar;
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.CustomImages.Parent = this.btnFechar;
+            this.btnFechar.FillColor = System.Drawing.Color.Transparent;
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFechar.ForeColor = System.Drawing.Color.White;
+            this.btnFechar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(25)))), ((int)(((byte)(24)))));
+            this.btnFechar.HoverState.Parent = this.btnFechar;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.Location = new System.Drawing.Point(989, 2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.ShadowDecoration.Parent = this.btnFechar;
+            this.btnFechar.Size = new System.Drawing.Size(29, 47);
+            this.btnFechar.TabIndex = 9;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::INTERFACE.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(-54, -64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmTurmaCadastro
             // 
@@ -602,13 +581,13 @@
             this.Load += new System.EventHandler(this.FrmTurmaCadastro_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlProf.ResumeLayout(false);
             this.pnlProf.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lsboxProf)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,7 +607,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbRes;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblText;
         private Guna.UI2.WinForms.Guna2Button btnFechar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;

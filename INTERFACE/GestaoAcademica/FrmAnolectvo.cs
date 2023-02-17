@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUSSINESS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,8 +24,7 @@ namespace INTERFACE.GestaoAcademica
             FrmAnoLetivoCadastro frmAnoLetivoCadastro = new FrmAnoLetivoCadastro();
             if (frmAnoLetivoCadastro.ShowDialog()== DialogResult.OK)
             {
-                MessageBox.Show("reload dataGridView");
-                
+                loadGrid();
             }
         }
 
@@ -35,28 +35,51 @@ namespace INTERFACE.GestaoAcademica
 
         private void FrmAnolectvo_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.Rows.Add(4);
+            loadGrid();
+        }
+        List<AnoLectivo> listAnoLetivo;
+        public void loadGrid()
+        {
+            guna2DataGridView1.Rows.Clear();
+            int count = 0;
+            listAnoLetivo = new AnoLectivo().listTodos();
+            if (listAnoLetivo.Count>0)
+            {
+                guna2DataGridView1.Rows.Add(listAnoLetivo.Count);
+            }
+            foreach (AnoLectivo item in listAnoLetivo)
+            {
+                guna2DataGridView1.Rows[count].Cells["nome"].Value = item.Ano;
+                guna2DataGridView1.Rows[count].Cells["inicio"].Value = item.DataInicio;
+                guna2DataGridView1.Rows[count].Cells["fim"].Value = item.DataFinal;
+                guna2DataGridView1.Rows[count].Cells["status"].Value = item.Status == 0 ? "INATIVO" : "ACTIVO";
+               
+                count++;
+            }
+        }
 
-            guna2DataGridView1.Rows[0].Cells[0].Value = "2020/2021";
-            guna2DataGridView1.Rows[0].Cells[1].Value = "10/02/2020";
-            guna2DataGridView1.Rows[0].Cells[2].Value = "11/10/2020";
-            guna2DataGridView1.Rows[0].Cells[3].Value = "Inativo";
-            guna2DataGridView1.Rows[0].Cells[4].Value = "Editar";
-
-            guna2DataGridView1.Rows[1].Cells[0].Value = "2022/2023";
-            guna2DataGridView1.Rows[1].Cells[1].Value = "10/02/2022";
-            guna2DataGridView1.Rows[1].Cells[2].Value = "11/10/2022";
-            guna2DataGridView1.Rows[1].Cells[3].Value = "Inativo";
-            guna2DataGridView1.Rows[1].Cells[4].Value = "Editar";
-
-
-            guna2DataGridView1.Rows[2].Cells[0].Value = "2023/2024";
-            guna2DataGridView1.Rows[2].Cells[1].Value = "10/02/2023";
-            guna2DataGridView1.Rows[2].Cells[2].Value = "11/10/2023";
-            guna2DataGridView1.Rows[2].Cells[3].Value = "Inativo";
-            guna2DataGridView1.Rows[2].Cells[4].Value = "Editar";
-
-
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 4:
+                    FrmAnoLetivoCadastro frmAnoEdit = new FrmAnoLetivoCadastro(listAnoLetivo[e.RowIndex]);
+                    frmAnoEdit.ShowDialog();
+                    loadGrid();
+                    break;
+                case 5:
+                    if (MessageBox.Show("Deseja eliminar esse ano letivo? Todos os registros relacionado serão apagados", "",MessageBoxButtons.YesNo)== DialogResult.Yes)
+                    {
+                        if (AnoLectivo.DELETE(listAnoLetivo[e.RowIndex].Id))
+                        {
+                            MessageBox.Show("Eliminado com sucesso");
+                            loadGrid();
+                        }
+                      ;
+                         
+                    }
+                    break;
+            }
         }
     }
 }

@@ -27,6 +27,33 @@ namespace DATABASE
             }
         }
 
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM ano_letivo WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+        public bool Edit(int Id, string Nome, string inicio, string fim, int Status)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE ano_letivo SET ano_lectivo = @ano , data_inicio = @inicio, data_final = @fim, status = @status WHERE id = @id";
+
+                command.Parameters.AddWithValue("@status", Status);
+                command.Parameters.AddWithValue("@ano", Nome);
+                command.Parameters.AddWithValue("@inicio", inicio);
+                command.Parameters.AddWithValue("@fim", fim);
+                command.Parameters.AddWithValue("@id", Id);
+
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();

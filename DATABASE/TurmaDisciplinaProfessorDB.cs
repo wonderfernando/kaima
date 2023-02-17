@@ -24,14 +24,33 @@ namespace DATABASE
                 return command.ExecuteNonQuery() == 1;
             }
         }
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM turma_disciplina_professor WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
 
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM turma_disciplina_professor", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM turma_disciplina_professor";
+                adapter.Fill(dt);
+                con.desconect();
+                return dt;
+            }
+        }
+        public DataTable listTodoForTurmaId(int idTurma)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter( "SELECT * FROM turma_disciplina_professor WHERE turma_id = @turma", con.getConection()))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@turma", idTurma);
                 adapter.Fill(dt);
                 con.desconect();
                 return dt;
@@ -41,10 +60,8 @@ namespace DATABASE
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM turma_disciplina_professor WHERE id = @id", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM turma_disciplina_professor WHERE id = @id";
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();
@@ -55,10 +72,8 @@ namespace DATABASE
         public DataRow getLast()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM turma_disciplina_professor WHERE order by id desc", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM turma_disciplina_professor WHERE order by id desc";
                 adapter.Fill(dt);
                 con.desconect();
                 DataRow drow = dt.Rows[0];

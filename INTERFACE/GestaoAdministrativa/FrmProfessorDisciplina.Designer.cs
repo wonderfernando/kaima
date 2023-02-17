@@ -1,6 +1,6 @@
-﻿namespace INTERFACE.GestaoAcademica
+﻿namespace INTERFACE.GestaoAdministrativa
 {
-    partial class FrmSala
+    partial class FrmProfessorDisciplina
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProfessorDisciplina));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSala));
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblText = new System.Windows.Forms.Label();
+            this.btnFechar = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Apagar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cmbDisci = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.TargetControl = this.pnlTop;
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.pnlTop.Controls.Add(this.lblText);
+            this.pnlTop.Controls.Add(this.btnFechar);
+            this.pnlTop.Controls.Add(this.pictureBox1);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(444, 50);
+            this.pnlTop.TabIndex = 8;
+            // 
+            // lblText
+            // 
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblText.ForeColor = System.Drawing.Color.LightGray;
+            this.lblText.Location = new System.Drawing.Point(55, 16);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(181, 17);
+            this.lblText.TabIndex = 9;
+            this.lblText.Text = "TURMAS DO PROFESSOR";
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.CheckedState.Parent = this.btnFechar;
+            this.btnFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechar.CustomImages.Parent = this.btnFechar;
+            this.btnFechar.FillColor = System.Drawing.Color.Transparent;
+            this.btnFechar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnFechar.ForeColor = System.Drawing.Color.White;
+            this.btnFechar.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(25)))), ((int)(((byte)(24)))));
+            this.btnFechar.HoverState.Parent = this.btnFechar;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.Location = new System.Drawing.Point(412, 2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.ShadowDecoration.Parent = this.btnFechar;
+            this.btnFechar.Size = new System.Drawing.Size(29, 47);
+            this.btnFechar.TabIndex = 9;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::INTERFACE.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(-54, -64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 185);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -68,10 +134,7 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 40;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
-            this.capacidade,
-            this.tipo,
-            this.Editar,
-            this.Apagar});
+            this.Column2});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -81,9 +144,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.guna2DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(-2, 64);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(0, 154);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
@@ -91,8 +155,8 @@
             this.guna2DataGridView1.RowTemplate.Height = 40;
             this.guna2DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1038, 527);
-            this.guna2DataGridView1.TabIndex = 10;
+            this.guna2DataGridView1.Size = new System.Drawing.Size(444, 303);
+            this.guna2DataGridView1.TabIndex = 24;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -115,8 +179,52 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 40;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             this.guna2DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentDoubleClick);
+            // 
+            // Nome
+            // 
+            this.Nome.FillWeight = 2F;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 1F;
+            this.Column2.HeaderText = "Remover";
+            this.Column2.Image = global::INTERFACE.Properties.Resources.del1;
+            this.Column2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column2.Name = "Column2";
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // cmbDisci
+            // 
+            this.cmbDisci.BackColor = System.Drawing.Color.Transparent;
+            this.cmbDisci.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbDisci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDisci.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbDisci.FocusedState.Parent = this.cmbDisci;
+            this.cmbDisci.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbDisci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbDisci.FormattingEnabled = true;
+            this.cmbDisci.HoverState.Parent = this.cmbDisci;
+            this.cmbDisci.ItemHeight = 30;
+            this.cmbDisci.ItemsAppearance.Parent = this.cmbDisci;
+            this.cmbDisci.Location = new System.Drawing.Point(94, 85);
+            this.cmbDisci.Name = "cmbDisci";
+            this.cmbDisci.ShadowDecoration.Parent = this.cmbDisci;
+            this.cmbDisci.Size = new System.Drawing.Size(277, 36);
+            this.cmbDisci.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 21);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Disciplina";
             // 
             // guna2Button2
             // 
@@ -131,120 +239,53 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(899, 13);
+            this.guna2Button2.Location = new System.Drawing.Point(381, 81);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(126, 44);
-            this.guna2Button2.TabIndex = 14;
-            this.guna2Button2.Text = "Adicionar Novo";
+            this.guna2Button2.Size = new System.Drawing.Size(58, 44);
+            this.guna2Button2.TabIndex = 27;
+            this.guna2Button2.Text = "ADD";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(2, 21);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(274, 36);
-            this.guna2TextBox1.TabIndex = 12;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderRadius = 8;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button1.Location = new System.Drawing.Point(209, 21);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(109, 36);
-            this.guna2Button1.TabIndex = 13;
-            // 
-            // Nome
-            // 
-            this.Nome.FillWeight = 2F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // capacidade
-            // 
-            this.capacidade.FillWeight = 2F;
-            this.capacidade.HeaderText = "Capacidade";
-            this.capacidade.Name = "capacidade";
-            // 
-            // tipo
-            // 
-            this.tipo.FillWeight = 2F;
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
-            // 
-            // Editar
-            // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Editar.FillWeight = 1F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::INTERFACE.Properties.Resources.Edit_50px;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.Name = "Editar";
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Apagar
-            // 
-            this.Apagar.FillWeight = 1F;
-            this.Apagar.HeaderText = "Apagar";
-            this.Apagar.Image = global::INTERFACE.Properties.Resources.del1;
-            this.Apagar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Apagar.Name = "Apagar";
-            this.Apagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // FrmSala
+            // FrmProfessorDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 592);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(444, 457);
             this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbDisci);
+            this.Controls.Add(this.guna2DataGridView1);
+            this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmSala";
-            this.Text = "FrmSala";
-            this.Load += new System.EventHandler(this.FrmSala_Load);
+            this.Name = "FrmProfessorDisciplina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmProfessorDisciplina";
+            this.Load += new System.EventHandler(this.FrmProfessorDisciplina_Load);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Label lblText;
+        private Guna.UI2.WinForms.Guna2Button btnFechar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbDisci;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capacidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Apagar;
+        private System.Windows.Forms.DataGridViewImageColumn Column2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

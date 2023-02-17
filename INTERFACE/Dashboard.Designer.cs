@@ -391,7 +391,7 @@
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(278, 59);
             this.guna2Button4.TabIndex = 21;
-            this.guna2Button4.Text = "Inscrições";
+            this.guna2Button4.Text = "Alunos";
             this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click_1);
             // 

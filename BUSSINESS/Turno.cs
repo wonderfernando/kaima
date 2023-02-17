@@ -37,6 +37,14 @@ namespace BUSSINESS
         {
            return turno.inserir(this.nome,this.inicio, this.final);
         }
+        public static bool DELETE(int id)
+        {
+            return new TurnoDB().DELETE(id);
+        }
+        public bool Edit()
+        { 
+            return new TurnoDB().Edit(this.Id, this.nome, this.inicio, this.final);
+        }
 
         public List<Turno> listTodos()
         {

@@ -33,10 +33,8 @@ namespace DATABASE
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter( "SELECT * FROM matricula", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM matricula";
                 adapter.Fill(dt);
                 con.desconect();
                 return dt;
@@ -46,10 +44,9 @@ namespace DATABASE
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula WHERE id = @id", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM matricula WHERE id = @id";
+    
                 adapter.SelectCommand.Parameters.AddWithValue("@id", id);
                 adapter.Fill(dt);
                 con.desconect();
@@ -60,10 +57,8 @@ namespace DATABASE
         public DataRow getLast()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter())
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula WHERE order by id desc",con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = "SELECT * FROM matricula WHERE order by id desc";
                 adapter.Fill(dt);
                 con.desconect();
                 DataRow drow = dt.Rows[0];

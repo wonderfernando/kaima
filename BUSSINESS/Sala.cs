@@ -43,6 +43,14 @@ namespace BUSSINESS
         {
            return sala.inserir(this.nome, this.capacidade, this.tipo);            
         }
+        public bool Edit()
+        {
+            return sala.Edit(this.Id, this.nome, this.capacidade, this.tipo);
+        }
+        public static bool DELETE(int id)
+        {
+            return new SalaDB().DELETE(id);
+        }
         public List<Sala> listTodos()
         {
            List<Sala> salas =new List<Sala>();

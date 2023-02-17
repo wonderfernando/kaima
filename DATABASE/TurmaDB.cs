@@ -29,7 +29,32 @@ namespace DATABASE
                 return command.ExecuteNonQuery() == 1;
             }
         }
-
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM turma WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+        public bool Edit(int Id ,string Nome, int IdClasse, int IdCurso, int idProf, int IdTurno,  int IdSala)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE turma SET nome = @nome, classe_id = @classe , curso_id = @curso, turno_id = @turno, sala_id = @sala , prof_id = @res WHERE id = @id";
+                command.Parameters.AddWithValue("@nome", Nome);
+                command.Parameters.AddWithValue("@classe", IdClasse);
+                command.Parameters.AddWithValue("@curso", IdCurso);
+                command.Parameters.AddWithValue("@turno", IdTurno);
+                command.Parameters.AddWithValue("@res", idProf);
+                command.Parameters.AddWithValue("@sala", IdSala);
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
@@ -56,7 +81,7 @@ namespace DATABASE
         public DataRow getLast()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM turma WHERE order by id desc",con.getConection()))
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM turma order by id desc",con.getConection()))
             {
                 adapter.Fill(dt);
                 con.desconect();

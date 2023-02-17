@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using BUSSINESS;
 namespace INTERFACE.GestaoAcademica
@@ -17,6 +11,14 @@ namespace INTERFACE.GestaoAcademica
             InitializeComponent();
          
         }
+        Disciplina disciplina;
+        public FrmDisciplinaCadastro(Disciplina disciplina)
+        {
+            InitializeComponent();
+            this.disciplina = disciplina;
+            lblText.Text = "EDITAR DISCIPLINA";
+            txtNome.Text = disciplina.disciplina;
+        }
 
         private void FrmDisciplinaCadastro_Load(object sender, EventArgs e)
         {
@@ -25,23 +27,35 @@ namespace INTERFACE.GestaoAcademica
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-           
-            Disciplina disciplina = new Disciplina(guna2TextBox2.Text);
-            if (disciplina.inserir())
+            if (disciplina==null)
             {
-                 this.DialogResult = DialogResult.OK;
+                 Disciplina disciplina1 = new Disciplina(txtNome.Text);
+                 if (disciplina1.inserir())
+                 {
+                      this.DialogResult = DialogResult.OK;
+                 }
             }
             else
             {
-                MessageBox.Show("dasd");
-                this.DialogResult = DialogResult.No;
+                disciplina.disciplina = txtNome.Text;
+                if (disciplina.Edit())
+                {
+                    MessageBox.Show("Editado com sucesso");
+                    this.DialogResult = DialogResult.OK;
+                }
             }
+           
             this.Close();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void pnlTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -22,11 +22,12 @@ namespace INTERFACE.GestaoAcademica
         {
             loadDatagrid();
         }
+        List<Turno> turnos;
         public void loadDatagrid()
         {
             Turno turno = new Turno();
             int row = 0;
-            List<Turno> turnos = turno.listTodos();
+            turnos = turno.listTodos();
             guna2DataGridView1.Rows.Clear();
             if (turnos.Count > 0)
             {
@@ -57,6 +58,25 @@ namespace INTERFACE.GestaoAcademica
                 MessageBox.Show("Não foi possivel cadastrar o turno");
             }
             
+        }
+       
+        private void guna2DataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 3:
+                    FrmTurnoCadastro frmT = new FrmTurnoCadastro(turnos[e.RowIndex]);
+                    frmT.ShowDialog();
+                    loadDatagrid();
+                    break;
+                case 4:
+                    if (MessageBox.Show("Deseja eliminar esse turno? ", "",MessageBoxButtons.YesNo)== DialogResult.Yes)
+                    {
+                        Turno.DELETE(turnos[e.RowIndex].Id);
+                        loadDatagrid();
+                    }
+                    break;
+            }
         }
     }
 }

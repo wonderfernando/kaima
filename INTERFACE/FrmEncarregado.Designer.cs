@@ -1,6 +1,6 @@
-﻿namespace INTERFACE.GestaoAcademica
+﻿namespace INTERFACE
 {
-    partial class FrmSala
+    partial class FrmEncarregado
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSala));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEncarregado));
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Apagar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -68,8 +69,9 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 40;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
-            this.capacidade,
-            this.tipo,
+            this.telefone,
+            this.email,
+            this.sexo,
             this.Editar,
             this.Apagar});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -83,7 +85,7 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(-2, 64);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(2, 68);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
@@ -91,8 +93,8 @@
             this.guna2DataGridView1.RowTemplate.Height = 40;
             this.guna2DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1038, 527);
-            this.guna2DataGridView1.TabIndex = 10;
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1002, 487);
+            this.guna2DataGridView1.TabIndex = 27;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -115,7 +117,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 40;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             this.guna2DataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentDoubleClick);
             // 
             // guna2Button2
@@ -131,13 +132,12 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(899, 13);
+            this.guna2Button2.Location = new System.Drawing.Point(867, 12);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(126, 44);
-            this.guna2Button2.TabIndex = 14;
+            this.guna2Button2.TabIndex = 30;
             this.guna2Button2.Text = "Adicionar Novo";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2TextBox1
             // 
@@ -152,14 +152,14 @@
             this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(2, 21);
+            this.guna2TextBox1.Location = new System.Drawing.Point(2, 20);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(274, 36);
-            this.guna2TextBox1.TabIndex = 12;
+            this.guna2TextBox1.TabIndex = 28;
             // 
             // guna2Button1
             // 
@@ -174,29 +174,35 @@
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button1.Location = new System.Drawing.Point(209, 21);
+            this.guna2Button1.Location = new System.Drawing.Point(209, 20);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(109, 36);
-            this.guna2Button1.TabIndex = 13;
+            this.guna2Button1.TabIndex = 29;
             // 
             // Nome
             // 
-            this.Nome.FillWeight = 2F;
+            this.Nome.FillWeight = 3F;
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             // 
-            // capacidade
+            // telefone
             // 
-            this.capacidade.FillWeight = 2F;
-            this.capacidade.HeaderText = "Capacidade";
-            this.capacidade.Name = "capacidade";
+            this.telefone.FillWeight = 2F;
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
             // 
-            // tipo
+            // email
             // 
-            this.tipo.FillWeight = 2F;
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.Name = "tipo";
+            this.email.FillWeight = 2F;
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // sexo
+            // 
+            this.sexo.FillWeight = 2F;
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.Name = "sexo";
             // 
             // Editar
             // 
@@ -217,19 +223,19 @@
             this.Apagar.Name = "Apagar";
             this.Apagar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // FrmSala
+            // FrmEncarregado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 592);
+            this.ClientSize = new System.Drawing.Size(1005, 556);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmSala";
-            this.Text = "FrmSala";
-            this.Load += new System.EventHandler(this.FrmSala_Load);
+            this.Name = "FrmEncarregado";
+            this.Text = "FrmEncarregado";
+            this.Load += new System.EventHandler(this.FrmEncarregado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -242,8 +248,9 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn capacidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Apagar;
     }

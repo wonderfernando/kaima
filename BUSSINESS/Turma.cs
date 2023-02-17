@@ -35,6 +35,7 @@ namespace BUSSINESS
             this.IdSala = IdSala;
             this.IdProf = IdProf;
             this.IdAnoLectivo = IdAnoLectivo;
+            this.IdTurno = IdTurno;
         }
         public Turma( string Nome, int IdCurso, int IdClasse, int IdTurno, int IdProf, int IdAnoLectivo, int IdSala)
         {
@@ -44,6 +45,7 @@ namespace BUSSINESS
             this.IdSala = IdSala;
             this.IdProf = IdProf;
             this.IdAnoLectivo = IdAnoLectivo;
+            this.IdTurno = IdTurno;
         }
         public Turma()
         {
@@ -52,6 +54,18 @@ namespace BUSSINESS
         public bool Insert()
         {
             return turmaDB.Insert(this.Nome,this.IdClasse,this.IdCurso, this.IdProf, this.IdTurno,this.IdAnoLectivo, this.IdSala);
+        }
+        public static bool DELETE(int id)
+        {
+            return new TurmaDB().DELETE(id);
+        }
+        public bool DELETE()
+        {
+            return  turmaDB.DELETE(this.Id);
+        }
+        public bool Edit()
+        {
+            return turmaDB.Edit(this.Id, this.Nome, this.IdClasse,this.IdCurso, this.IdProf, this.IdTurno, this.IdSala);
         }
         TurmaDB turmaDB = new TurmaDB();
         public List<Turma> listTodos()

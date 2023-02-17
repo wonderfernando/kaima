@@ -39,6 +39,15 @@ namespace BUSSINESS
         {
             return anoLetivoDB.Insert(this.Ano,this.DataInicio, this.DataFinal, this.Status);
         }
+        public bool Edit()
+        {
+            return anoLetivoDB.Edit(this.Id, this.Ano, this.DataInicio, this.DataFinal, this.Status);
+        }
+        public static bool DELETE(int id)
+        {
+            return new AnoLetivoDB().DELETE(id);
+        }
+
         public List<AnoLectivo> listTodos()
         {
             List<AnoLectivo> anoLetivos = new List<AnoLectivo>();

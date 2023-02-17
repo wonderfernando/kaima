@@ -23,7 +23,16 @@ namespace DATABASE
                 return command.ExecuteNonQuery() == 1;
             }
         }
-
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM professor_disciplina WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
         public DataTable listTodos()
         {
             DataTable dt = new DataTable();
@@ -40,6 +49,17 @@ namespace DATABASE
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM professor_disciplina WHERE disciplina_id = @disci", con.getConection()))
             {
                 adapter.SelectCommand.Parameters.AddWithValue("disci", idDisc);
+                adapter.Fill(dt);
+                con.desconect();
+                return dt;
+            }
+        }
+        public DataTable listTodosByIdProf(int idProf)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM professor_disciplina WHERE professor_id = @prof", con.getConection()))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@prof", idProf);
                 adapter.Fill(dt);
                 con.desconect();
                 return dt;

@@ -404,3 +404,7 @@ C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE
 C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.exe.licenses
 C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.GestaoAcademica.FrmCursoDisciplinaClasse.resources
 C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.GestaoAcademica.FrmCursoDisciplinaClasseView.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.FrmTurmaProfessoreView.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.GestaoAdministrativa.FrmProfessorDisciplinaView.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.GestaoAdministrativa.FrmProfessorDisciplina.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.FrmEncarregado.resources

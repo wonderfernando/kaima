@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTurnoCadastro));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblText = new System.Windows.Forms.Label();
             this.btnFechar = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.pnlTop.Controls.Add(this.label3);
+            this.pnlTop.Controls.Add(this.lblText);
             this.pnlTop.Controls.Add(this.btnFechar);
             this.pnlTop.Controls.Add(this.pictureBox1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,16 +65,16 @@
             this.pnlTop.Size = new System.Drawing.Size(678, 50);
             this.pnlTop.TabIndex = 27;
             // 
-            // label3
+            // lblText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(55, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "CADASTRAR TURNO";
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblText.ForeColor = System.Drawing.Color.LightGray;
+            this.lblText.Location = new System.Drawing.Point(55, 16);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(146, 17);
+            this.lblText.TabIndex = 9;
+            this.lblText.Text = "CADASTRAR TURNO";
             // 
             // btnFechar
             // 
@@ -270,7 +270,7 @@
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblText;
         private Guna.UI2.WinForms.Guna2Button btnFechar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;

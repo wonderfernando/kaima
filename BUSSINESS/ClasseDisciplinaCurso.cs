@@ -50,7 +50,7 @@ namespace BUSSINESS
             return classeDisciplinaCursoDB.DELETE(this.Id);
         }
 
-        public List<ClasseDisciplinaCurso> listTodos()
+    public List<ClasseDisciplinaCurso> listTodos()
     {
         List<ClasseDisciplinaCurso> professorDisciplinaCursos = new List<ClasseDisciplinaCurso>();
         foreach (DataRow item in classeDisciplinaCursoDB.listTodos().Rows)
@@ -63,8 +63,21 @@ namespace BUSSINESS
         }
         return professorDisciplinaCursos;
     }
+        public static List<ClasseDisciplinaCurso> listTodosByClasseCurso()
+        {
+            List<ClasseDisciplinaCurso> professorDisciplinaCursos = new List<ClasseDisciplinaCurso>();
+            foreach (DataRow item in new ClasseDisciplinaCursoDB().listTodos().Rows)
+            {
+                ClasseDisciplinaCurso cl = new ClasseDisciplinaCurso(int.Parse(item["id"].ToString()), int.Parse(item["curso_id"].ToString()), int.Parse(item["classe_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
+                cl.Classe = BUSSINESS.Classe.findId(int.Parse(item["classe_id"].ToString()));
+                cl.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
+                cl.Curso = BUSSINESS.Curso.findId(int.Parse(item["curso_id"].ToString()));
+                professorDisciplinaCursos.Add(cl);
+            }
+            return professorDisciplinaCursos;
+        }
 
-    public static ClasseDisciplinaCurso findId(int id)
+        public static ClasseDisciplinaCurso findId(int id)
     {
         DataRow item = new ClasseDisciplinaCursoDB().findId(id);
         if (item != null)

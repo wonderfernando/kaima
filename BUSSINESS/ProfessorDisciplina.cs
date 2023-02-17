@@ -38,6 +38,10 @@ namespace BUSSINESS
         {
             return professorDisciplinaDB.Insert(this.IdProfessor,this.IdDisciplina);
         }
+        public static bool DELETE(int id)
+        {
+            return new ProfessorDisciplinaDB().DELETE(id);
+        }
 
         public List<ProfessorDisciplina> listTodos()
         {
@@ -55,6 +59,19 @@ namespace BUSSINESS
         {
             List<ProfessorDisciplina> professorDisciplinas = new List<ProfessorDisciplina>();
             foreach (DataRow item in new ProfessorDisciplinaDB().listTodosByIdDisc(idDisci).Rows)
+            {
+                ProfessorDisciplina prof = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
+                prof.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));
+                prof.Disciplina = BUSSINESS.Disciplina.findId(int.Parse(item["disciplina_id"].ToString()));
+
+                professorDisciplinas.Add(prof);
+            }
+            return professorDisciplinas;
+        }
+        public static List<ProfessorDisciplina> listTodosByProfId(int idProf)
+        {
+            List<ProfessorDisciplina> professorDisciplinas = new List<ProfessorDisciplina>();
+            foreach (DataRow item in new ProfessorDisciplinaDB().listTodosByIdProf(idProf).Rows)
             {
                 ProfessorDisciplina prof = new ProfessorDisciplina(int.Parse(item["id"].ToString()), int.Parse(item["professor_id"].ToString()), int.Parse(item["disciplina_id"].ToString()));
                 prof.Professor = BUSSINESS.Professor.findId(int.Parse(item["professor_id"].ToString()));
