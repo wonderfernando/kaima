@@ -41,6 +41,7 @@ namespace DATABASE
             }
         }
 
+
         public DataRow findId(int id)
         {
             DataTable dt = new DataTable();
@@ -54,15 +55,37 @@ namespace DATABASE
                 return drow;
             }
         }
+        public DataTable listForIdAlunoAno(int id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula WHERE aluno_id = @id", con.getConection()))
+            {
+
+                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                adapter.Fill(dt);
+                con.desconect();
+               
+                return dt;
+            }
+        }
         public DataRow getLast()
         {
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula WHERE order by id desc",con.getConection()))
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula  order by id desc  limit 1",con.getConection()))
             {
                 adapter.Fill(dt);
                 con.desconect();
                 DataRow drow = dt.Rows[0];
                 return drow;
+            }
+        }
+        public bool fecharMatricular(int Id)
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand command = new MySqlCommand("UPDATE matricula SET status = 0 WHERE aluno_id = @id", con.getConection()))
+            {
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1 ? true : false;
             }
         }
     }

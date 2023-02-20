@@ -408,3 +408,6 @@ C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE
 C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.GestaoAdministrativa.FrmProfessorDisciplinaView.resources
 C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.GestaoAdministrativa.FrmProfessorDisciplina.resources
 C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.FrmEncarregado.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.FrmEncarregadoCadastro.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.FrmMatriculaCadastro.resources
+C:\Users\programador\Documents\Visual Studio 2015\Projects\Kaima\KAIMA\INTERFACE\obj\Debug\INTERFACE.FrmAlunoFicha.resources

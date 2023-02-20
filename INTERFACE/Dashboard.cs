@@ -615,11 +615,7 @@ namespace INTERFACE
 
         private void guna2Button14_Click_1(object sender, EventArgs e)
         {
-            lblSource.Text = "Matricula";
-            hideSubMenu();
-            resetButtonMenu();
-            (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;
-            openChildForm(new GestaoAdministrativa.FrmAluno());
+            new FrmMatriculaCadastro().ShowDialog();
         }
 
         private void guna2Button15_Click_1(object sender, EventArgs e)
@@ -672,7 +668,12 @@ namespace INTERFACE
             hideSubMenu();
             resetButtonMenu();
             (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;
-            openChildForm(new GestaoAdministrativa.FrmAluno());
+            openChildForm(new FrmEncarregado());
+        }
+
+        private void btnOculta_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

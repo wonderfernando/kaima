@@ -81,14 +81,43 @@ namespace DATABASE
             DataTable dt = new DataTable();
             using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM aluno WHERE order by id desc", con.getConection()))
             {
-                adapter.SelectCommand.Connection = con.getConection();
-                adapter.SelectCommand.CommandText = ;
+             
                 adapter.Fill(dt);
                 con.desconect();
                 DataRow drow = dt.Rows[0];
                 return drow;
             }
         }
+
+        public bool Edit(int Id, string Nome, string Telefone, string Morada, string Bi, string Data, string Sexo, int IdEnc, string img)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE aluno SET nome = @nome, telefone = @telefone, morada = @morada,bi = @bi, img = @img, data_nascimento = @data, sexo=@sexo, encarregado_id = @encarregado  WHERE id = @id";
+                command.Parameters.AddWithValue("@nome", Nome);
+                command.Parameters.AddWithValue("@telefone", Telefone);
+                command.Parameters.AddWithValue("@morada", Morada);
+                command.Parameters.AddWithValue("@bi", Bi);
+                command.Parameters.AddWithValue("@img", img);
+                command.Parameters.AddWithValue("@data", Data);
+                command.Parameters.AddWithValue("@encarregado", IdEnc);
+                command.Parameters.AddWithValue("@sexo", Sexo);
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+        public bool DELETE(int Id)
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "DELETE FROM aluno WHERE id = @id";
+                command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
+
         #endregion
     }
 }

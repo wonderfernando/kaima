@@ -15,11 +15,12 @@ namespace INTERFACE
 
         private void FrmEncarregado_Load(object sender, EventArgs e)
         {
-
+            loadGrid();
         }
         List<Encarregado> listEncarregado;
         public void loadGrid()
         {
+            guna2DataGridView1.Rows.Clear();
             int count = 0;
             listEncarregado = new Encarregado().listTodos();
             if (listEncarregado.Count > 0)
@@ -39,7 +40,9 @@ namespace INTERFACE
             switch (e.ColumnIndex)
             {
                 case 4:
-
+                    FrmEncarregadoCadastro frm = new FrmEncarregadoCadastro(listEncarregado[e.RowIndex]);
+                    frm.ShowDialog();
+                    loadGrid();
                     break;
                 case 5:
                     if (MessageBox.Show("Deseja apagar esse encarregado?","",MessageBoxButtons.YesNo)== DialogResult.Yes)
@@ -49,6 +52,12 @@ namespace INTERFACE
                     }
                     break;
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            new FrmEncarregadoCadastro().ShowDialog();
+            loadGrid();
         }
     }
 }

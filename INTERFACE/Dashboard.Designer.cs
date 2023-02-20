@@ -38,7 +38,6 @@
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnRelatorio = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
@@ -73,6 +72,7 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.lblSource = new System.Windows.Forms.Label();
             this.conteiner = new System.Windows.Forms.Panel();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.submenuRelatorio.SuspendLayout();
@@ -245,36 +245,6 @@
             this.panel4.Size = new System.Drawing.Size(278, 299);
             this.panel4.TabIndex = 9;
             // 
-            // guna2Button7
-            // 
-            this.guna2Button7.Animated = true;
-            this.guna2Button7.BorderRadius = 15;
-            this.guna2Button7.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(133)))), ((int)(((byte)(9)))));
-            this.guna2Button7.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.CheckedState.Parent = this.guna2Button7;
-            this.guna2Button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button7.CustomImages.CheckedImage = global::INTERFACE.Properties.Resources.book;
-            this.guna2Button7.CustomImages.HoveredImage = global::INTERFACE.Properties.Resources.book;
-            this.guna2Button7.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button7.CustomImages.Parent = this.guna2Button7;
-            this.guna2Button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button7.FillColor = System.Drawing.Color.White;
-            this.guna2Button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.guna2Button7.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(133)))), ((int)(((byte)(9)))));
-            this.guna2Button7.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.HoverState.Parent = this.guna2Button7;
-            this.guna2Button7.Image = global::INTERFACE.Properties.Resources.open_book;
-            this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button7.Location = new System.Drawing.Point(0, 242);
-            this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
-            this.guna2Button7.Size = new System.Drawing.Size(278, 59);
-            this.guna2Button7.TabIndex = 25;
-            this.guna2Button7.Text = "Encarregados";
-            this.guna2Button7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click_2);
-            // 
             // guna2Button16
             // 
             this.guna2Button16.Animated = true;
@@ -287,7 +257,6 @@
             this.guna2Button16.CustomImages.HoveredImage = global::INTERFACE.Properties.Resources.book;
             this.guna2Button16.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button16.CustomImages.Parent = this.guna2Button16;
-            this.guna2Button16.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button16.FillColor = System.Drawing.Color.White;
             this.guna2Button16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
@@ -296,7 +265,7 @@
             this.guna2Button16.HoverState.Parent = this.guna2Button16;
             this.guna2Button16.Image = global::INTERFACE.Properties.Resources.open_book;
             this.guna2Button16.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button16.Location = new System.Drawing.Point(0, 183);
+            this.guna2Button16.Location = new System.Drawing.Point(3, 242);
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.ShadowDecoration.Parent = this.guna2Button16;
             this.guna2Button16.Size = new System.Drawing.Size(278, 59);
@@ -317,7 +286,6 @@
             this.guna2Button15.CustomImages.HoveredImage = global::INTERFACE.Properties.Resources.noteswt;
             this.guna2Button15.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button15.CustomImages.Parent = this.guna2Button15;
-            this.guna2Button15.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button15.FillColor = System.Drawing.Color.White;
             this.guna2Button15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
@@ -326,7 +294,7 @@
             this.guna2Button15.HoverState.Parent = this.guna2Button15;
             this.guna2Button15.Image = global::INTERFACE.Properties.Resources.sticky_note;
             this.guna2Button15.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button15.Location = new System.Drawing.Point(0, 124);
+            this.guna2Button15.Location = new System.Drawing.Point(0, 185);
             this.guna2Button15.Name = "guna2Button15";
             this.guna2Button15.ShadowDecoration.Parent = this.guna2Button15;
             this.guna2Button15.Size = new System.Drawing.Size(278, 59);
@@ -347,7 +315,6 @@
             this.guna2Button14.CustomImages.HoveredImage = global::INTERFACE.Properties.Resources.book;
             this.guna2Button14.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button14.CustomImages.Parent = this.guna2Button14;
-            this.guna2Button14.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button14.FillColor = System.Drawing.Color.White;
             this.guna2Button14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
@@ -356,7 +323,7 @@
             this.guna2Button14.HoverState.Parent = this.guna2Button14;
             this.guna2Button14.Image = global::INTERFACE.Properties.Resources.sign_up;
             this.guna2Button14.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button14.Location = new System.Drawing.Point(0, 65);
+            this.guna2Button14.Location = new System.Drawing.Point(1, 125);
             this.guna2Button14.Name = "guna2Button14";
             this.guna2Button14.ShadowDecoration.Parent = this.guna2Button14;
             this.guna2Button14.Size = new System.Drawing.Size(278, 59);
@@ -377,7 +344,6 @@
             this.guna2Button4.CustomImages.HoveredImage = global::INTERFACE.Properties.Resources.writingwt;
             this.guna2Button4.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Button4.FillColor = System.Drawing.Color.White;
             this.guna2Button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
@@ -386,7 +352,7 @@
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = global::INTERFACE.Properties.Resources.writing;
             this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 6);
+            this.guna2Button4.Location = new System.Drawing.Point(0, 65);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(278, 59);
@@ -971,6 +937,7 @@
             this.btnOculta.ShadowDecoration.Parent = this.btnOculta;
             this.btnOculta.Size = new System.Drawing.Size(38, 50);
             this.btnOculta.TabIndex = 10;
+            this.btnOculta.Click += new System.EventHandler(this.btnOculta_Click);
             // 
             // btnFechar
             // 
@@ -1082,6 +1049,36 @@
             this.conteiner.TabIndex = 3;
             this.conteiner.Paint += new System.Windows.Forms.PaintEventHandler(this.conteiner_Paint_1);
             // 
+            // guna2Button7
+            // 
+            this.guna2Button7.Animated = true;
+            this.guna2Button7.BorderRadius = 15;
+            this.guna2Button7.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(133)))), ((int)(((byte)(9)))));
+            this.guna2Button7.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.CheckedState.Parent = this.guna2Button7;
+            this.guna2Button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button7.CustomImages.CheckedImage = global::INTERFACE.Properties.Resources.book;
+            this.guna2Button7.CustomImages.HoveredImage = global::INTERFACE.Properties.Resources.book;
+            this.guna2Button7.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button7.CustomImages.Parent = this.guna2Button7;
+            this.guna2Button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button7.FillColor = System.Drawing.Color.White;
+            this.guna2Button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.guna2Button7.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(133)))), ((int)(((byte)(9)))));
+            this.guna2Button7.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.HoverState.Parent = this.guna2Button7;
+            this.guna2Button7.Image = global::INTERFACE.Properties.Resources.open_book;
+            this.guna2Button7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button7.Location = new System.Drawing.Point(0, 6);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
+            this.guna2Button7.Size = new System.Drawing.Size(278, 59);
+            this.guna2Button7.TabIndex = 25;
+            this.guna2Button7.Text = "Encarregados";
+            this.guna2Button7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click_2);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1154,10 +1151,10 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnRelatorio;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button15;
         private Guna.UI2.WinForms.Guna2Button guna2Button14;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
     }
 }

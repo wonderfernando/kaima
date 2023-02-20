@@ -53,7 +53,15 @@ namespace BUSSINESS
         {
             return alunoDB.Insert(this.Nome,this.Telefone,this.Morada,this.DataNascimento,this.Sexo,this.EncarregadoId,this.Bi,this.Img);
         }
-       public static Aluno findId(int id)
+        public bool Edit()
+        {
+            return alunoDB.Edit(this.Id,this.Nome, this.Telefone, this.Morada, this.Bi,this.DataNascimento, this.Sexo, this.EncarregadoId,  this.Img);
+        }
+        public static bool DELETE(int id)
+        {
+            return new AlunoDB().DELETE(id);
+         }
+        public static Aluno findId(int id)
         {
             DataRow dt = new AlunoDB().findId(id);
             if (dt!=null)

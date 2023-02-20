@@ -110,6 +110,12 @@
     <Compile Include="FrmAlunoCadastro.Designer.cs">
       <DependentUpon>FrmAlunoCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAlunoFicha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAlunoFicha.Designer.cs">
+      <DependentUpon>FrmAlunoFicha.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAlunoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,18 @@
     </Compile>
     <Compile Include="FrmEncarregado.Designer.cs">
       <DependentUpon>FrmEncarregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEncarregadoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEncarregadoCadastro.Designer.cs">
+      <DependentUpon>FrmEncarregadoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMatriculaCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMatriculaCadastro.Designer.cs">
+      <DependentUpon>FrmMatriculaCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTurmaProfessoreView.cs">
       <SubType>Form</SubType>
@@ -322,11 +340,20 @@
     <EmbeddedResource Include="FrmAlunoCadastro.resx">
       <DependentUpon>FrmAlunoCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAlunoFicha.resx">
+      <DependentUpon>FrmAlunoFicha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAlunoView.resx">
       <DependentUpon>FrmAlunoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEncarregado.resx">
       <DependentUpon>FrmEncarregado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEncarregadoCadastro.resx">
+      <DependentUpon>FrmEncarregadoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMatriculaCadastro.resx">
+      <DependentUpon>FrmMatriculaCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTurmaProfessoreView.resx">
       <DependentUpon>FrmTurmaProfessoreView.cs</DependentUpon>
@@ -699,6 +726,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

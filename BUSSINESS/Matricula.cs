@@ -64,7 +64,16 @@ namespace BUSSINESS
             List<Matricula> matriculas = new List<Matricula>();
             foreach (DataRow item in matriculaDB.listTodos().Rows)
             {
-                matriculas.Add(new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()),  int.Parse(item["turma_id"].ToString()), item["data"].ToString(), item["nmatricula"].ToString(),int.Parse(item["status"].ToString()), item["tipo"].ToString()));
+                matriculas.Add(new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()),  int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(),int.Parse(item["status"].ToString()), item["tipo"].ToString()));
+            }
+            return matriculas;
+        }
+        public static List<Matricula> listForIdAlunoAno(int idAluno)
+        {
+            List<Matricula> matriculas = new List<Matricula>();
+            foreach (DataRow item in new MatriculaDB().listForIdAlunoAno(idAluno).Rows)
+            {
+                matriculas.Add(new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString()));
             }
             return matriculas;
         }
@@ -73,10 +82,24 @@ namespace BUSSINESS
             DataRow item = new MatriculaDB().findId(id);
             if (item != null)
             {
-                Matricula matricula = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), item["data"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
+                Matricula matricula = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
                 return matricula;
             }
             return null;
+        }
+        public static Matricula getLast()
+        {
+            DataRow item = new MatriculaDB().getLast();
+            if (item != null)
+            {
+                Matricula matricula = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
+                return matricula;
+            }
+            return null;
+        }
+        public static bool fecharMatricular(int id)
+        {
+            return new MatriculaDB().fecharMatricular(id);
         }
 
     }

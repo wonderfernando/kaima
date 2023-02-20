@@ -55,7 +55,7 @@ namespace BUSSINESS
             if (dt != null)
             {
                 Encarregado encarregado = new Encarregado(int.Parse(dt["id"].ToString()), dt["nome"].ToString(), dt["telefone"].ToString(), dt["email"].ToString(), dt["sexo"].ToString());
-                encarregado.Alunos = Aluno.listAlunosForEncarregadoId(id);
+               // encarregado.Alunos = Aluno.listAlunosForEncarregadoId(id);
                 return encarregado;
             }
             return null;
@@ -66,7 +66,7 @@ namespace BUSSINESS
             if (dt != null)
             {
                 Encarregado encarregado = new Encarregado(int.Parse(dt["id"].ToString()), dt["nome"].ToString(), dt["telefone"].ToString(), dt["email"].ToString(), dt["sexo"].ToString());
-                encarregado.Alunos = Aluno.listAlunosForEncarregadoId(int.Parse(dt["id"].ToString()));
+             //   encarregado.Alunos = Aluno.listAlunosForEncarregadoId(int.Parse(dt["id"].ToString()));
                 return encarregado;
             }
             return null;
@@ -78,7 +78,7 @@ namespace BUSSINESS
             foreach (DataRow item in dt.Rows)
             {
                 Encarregado encarregado = new Encarregado(int.Parse(item["id"].ToString()), item["nome"].ToString(), item["telefone"].ToString(), item["email"].ToString(), item["sexo"].ToString());
-                encarregado.Alunos = Aluno.listAlunosForEncarregadoId(int.Parse(item["id"].ToString()));
+            //    encarregado.Alunos = Aluno.listAlunosForEncarregadoId(int.Parse(item["id"].ToString()));
                 encarregados.Add(encarregado);
             }
             return encarregados;
