@@ -593,6 +593,16 @@ namespace INTERFACE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_caima21 {
+            get {
+                object obj = ResourceManager.GetObject("Logo-caima21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap look {
             get {
                 object obj = ResourceManager.GetObject("look", resourceCulture);

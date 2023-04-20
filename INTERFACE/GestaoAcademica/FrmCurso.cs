@@ -55,6 +55,7 @@ namespace INTERFACE.GestaoAcademica
                     guna2DataGridView1.Rows[row].Cells["nome"].Value = item.Nome;
                     guna2DataGridView1.Rows[row].Cells["mensalidade"].Value = item.Mensalidade;
                     guna2DataGridView1.Rows[row].Cells["duracao"].Value = item.area.duracao;
+                    guna2DataGridView1.Rows[row].Cells["area"].Value = item.area.area;
                     row++;
                 }
             }

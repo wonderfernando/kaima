@@ -86,13 +86,21 @@ namespace INTERFACE.GestaoAcademica
         {
             if (e.ColumnIndex == 3)
             {
-                if (MessageBox.Show("Tem a certeza que deseja remover ?") == DialogResult.OK)
+                if (MessageBox.Show("Tem a certeza que deseja remover ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (AreaFormacao.Delete(list[e.RowIndex].id))
+                    if (new Curso().listTodo().Where(c=>c.areaId== list[e.RowIndex].id).ToList().Count>0)
                     {
-                        MessageBox.Show("Apagado do sucesso");
-                        loadGridView();
+                        MessageBox.Show("Não é possivel apagar uma area com cursos ja cadastrados");
                     }
+                    else
+                    {
+                        if (AreaFormacao.Delete(list[e.RowIndex].id))
+                        {
+                            MessageBox.Show("Apagado do sucesso");
+                            loadGridView();
+                        }
+                    }
+                   
                 }
             }
             else if (e.ColumnIndex == 2)

@@ -39,22 +39,43 @@ namespace INTERFACE
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Matricula m = new Matricula(listAluno[cmbAluno.SelectedIndex].Id, copyTurma[cmbTurma.SelectedIndex].Id, AnoLectivo.getLast().Id, txtFim.Text, txtNmatricula.Text, 1, cmbTipo.SelectedItem.ToString());
-            if (Matricula.fecharMatricular(listAluno[cmbAluno.SelectedIndex].Id))
+            Matricula.fecharMatricular(listAluno[cmbAluno.SelectedIndex].Id);
+      
+            DateTime dataInicio = DateTime.Parse(AnoLectivo.getLast().DataInicio);
+            DateTime dataFim = DateTime.Parse(AnoLectivo.getLast().DataFinal);
+
+            int meses = ((dataFim.Year - dataInicio.Year) * 12) + (dataFim.Month - dataInicio.Month); // cálculo da quantidade de meses
+     
+
+             m.inserir();
+            //gerando as mensalidades da matricula
+            for (int i = 0; i < meses; i++)
             {
-                m.inserir();
-                MessageBox.Show("Matriculado com sucesso");
-            }
+                dataInicio = dataInicio.AddMonths(1);
+               
+                Propina prop = new Propina(Matricula.getLast().Id, listAluno[cmbAluno.SelectedIndex].Id ,dataInicio.ToShortDateString(), "", listCurso[cmbCurso.SelectedIndex].Mensalidade, 0, 0, 1, Multa.findId(1).multa);
+                prop.Insert();
+            }     
+           MessageBox.Show("Matriculado com sucesso");
+            
             Close();
         }
 
         List<Turma> copyTurma;
-        public void loadCombo()
+
+        public bool getData()
         {
-            listAluno = new Aluno().listTodos();
-            listClasse = new Classe().listTodos();
-            listCurso = new Curso().listTodo();
-            listTurno = new Turno().listTodos();
-            listTurma = new Turma().listTodos();
+                listAluno = new Aluno().listTodos();
+                listClasse = new Classe().listTodos();
+                listCurso = new Curso().listTodo();
+                listTurno = new Turno().listTodos();
+                listTurma = new Turma().listTodos();
+                return true;
+        }
+        public async void loadCombo()
+        {
+           var result = await Task.Run( () => getData());
+
             foreach (Aluno item in  listAluno)
             {
                 cmbAluno.Items.Add(item.Nome);
@@ -71,8 +92,9 @@ namespace INTERFACE
             {
                 cmbTurno.Items.Add(item.nome);
             }
-  
             txtAnoLetovo.Text = AnoLectivo.getLast().Ano;
+
+            load.Visible = false;
         }
 
         private void cmbCurso_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,6 +136,22 @@ namespace INTERFACE
         {
             Aluno aluno = Aluno.findId(idAluno);
             cmbAluno.Text = aluno.Nome; 
+        }
+
+        private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTipo.SelectedIndex==0)
+            {
+                txtTotal.Text = MatriculaPayment.findId(1).Preco.ToString();
+            }
+            else if (cmbTipo.SelectedIndex==1)
+            {
+                txtTotal.Text = MatriculaPayment.findId(2).Preco.ToString();
+            }
+            else
+            {
+                txtTotal.Text = "0";
+            }
         }
     }
 }

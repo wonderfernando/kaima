@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUSSINESS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,10 +94,10 @@ namespace INTERFACE
       //  BUSSINESS.Usuario usuario = new BUSSINESS.Usuario(txtUsuario.Text, txtSenha.Text);
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (BUSSINESS.Usuario.login(txtUsuario.Text,txtSenha.Text))
+            Usuario usuario = Usuario.login(txtUsuario.Text, txtSenha.Text);
+            if (usuario!=null)
             {
- 
-                new Dashboard().Show();
+                new Dashboard(usuario).Show();
                 this.Hide();
             }
             else

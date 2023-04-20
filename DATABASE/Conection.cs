@@ -25,7 +25,7 @@ namespace DATABASE
             
             if(stringConection.State == System.Data.ConnectionState.Open)
             {
-                stringConection.Clone();
+                stringConection.Close();
             }
         }
     }

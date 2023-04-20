@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUSSINESS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,18 @@ namespace INTERFACE
     public partial class Dashboard : Form
     {
         Form activeForm;
-        public Dashboard()
+        public Dashboard(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+            label1.Text = usuario.username;
         }
-
+        public Dashboard( )
+        {
+            InitializeComponent();
+  
+        }
+        Usuario usuario;
         private void Dashboard_Load(object sender, EventArgs e)
         {
             openChildForm(new Form2());
@@ -62,13 +70,14 @@ namespace INTERFACE
 
             guna2Button11.Checked = false;
             guna2Button12.Checked = false;
+
             guna2Button14.Checked = false;
-            guna2Button15.Checked = false;
+           
+            guna2Button3.Checked = false;
+            guna2Button1.Checked = false;
 
-            guna2Button16.Checked = false;
-
-      //      guna2Button19.Checked = false;
-   //0         guna2Button20.Checked = false;
+            //      guna2Button19.Checked = false;
+            //0         guna2Button20.Checked = false;
             guna2Button8.Checked = false;
             btnSala.Checked = false;
 
@@ -402,42 +411,12 @@ namespace INTERFACE
 
         private void guna2Button15_Click(object sender, EventArgs e)
         {
-            if (!guna2Button15.Checked)
-            {
-                resetButtonMenu();
-                hideSubMenu();
-                (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;
-
-                /*
-            Form2 from = new Form2();
-            from.TopLevel = false;
-            from.Dock = DockStyle.Fill;
-            from.FormBorderStyle = FormBorderStyle.None;
-            conteiner.Controls.Add(from);
-            conteiner.Tag = from;
-            from.BringToFront();
-            from.Show();*/
-            }
+            
         }
 
         private void guna2Button16_Click(object sender, EventArgs e)
         {
-            if (!guna2Button16.Checked)
-            {
-                resetButtonMenu();
-                hideSubMenu();
-                (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;
-
-                /*
-            Form2 from = new Form2();
-            from.TopLevel = false;
-            from.Dock = DockStyle.Fill;
-            from.FormBorderStyle = FormBorderStyle.None;
-            conteiner.Controls.Add(from);
-            conteiner.Tag = from;
-            from.BringToFront();
-            from.Show();*/
-            }
+            
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
@@ -674,6 +653,47 @@ namespace INTERFACE
         private void btnOculta_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void guna2Button3_Click_1(object sender, EventArgs e)
+        {
+            lblSource.Text = "Usuarios";
+
+            resetButtonMenu(btnAdmin);
+            (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;
+            openChildForm(new FrmUsuario());
+
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            Hide();
+        }
+
+        private void submenuAcademinc_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button10_Click_1(object sender, EventArgs e)
+        {
+            new Financeiro.FrmMulta().ShowDialog();
+        }
+
+        private void guna2Button15_Click_2(object sender, EventArgs e)
+        {
+            new Financeiro.FrmMatriculaPayments().ShowDialog();
+        }
+
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            lblSource.Text = "Pagementos > Propinas";
+
+            resetButtonMenu(btnAdmin);
+            (sender as Guna.UI2.WinForms.Guna2Button).Checked = true;
+            openChildForm(new Financeiro.FrmPropina());
         }
     }
 }

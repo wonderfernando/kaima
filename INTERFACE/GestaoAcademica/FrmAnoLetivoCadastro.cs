@@ -32,15 +32,32 @@ namespace INTERFACE.GestaoAcademica
         {
             if (ano==null)
             {
-                AnoLectivo ano = new AnoLectivo(txtAno.Text,txtInicio.Text, txtFim.Text, 1);
-                AnoLectivo a = AnoLectivo.getLast();
-                a.Status = 0;
-                a.Edit();
-                if (ano.Insert())
+                if (MessageBox.Show("Abrindo um novo ano lectivo, irá terminar todas matriculas e turmas do ano letivo atual, deseja continuar?", "",MessageBoxButtons.YesNo)== DialogResult.Yes)
                 {
-                    DialogResult = DialogResult.OK;
-                    MessageBox.Show("Inserido com sucesso");
+                    if (txtAno.Text.Trim()!= "")
+                    {
+                            Matricula.fecharAnoLetivo();
+                            AnoLectivo.FecharAnoLetivo();
+
+                            AnoLectivo ano = new AnoLectivo(txtAno.Text,txtInicio.Text, txtFim.Text, 1);
+                    
+                            if (ano.Insert())
+                            {
+                                DialogResult = DialogResult.OK;
+                                MessageBox.Show("Inserido com sucesso");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nao cadastrou");
+                            }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dados incorreto");
+                    }
+                    
                 }
+             
             }
             else
             {
@@ -63,6 +80,7 @@ namespace INTERFACE.GestaoAcademica
         private void FrmAnoLetivoCadastro_Load(object sender, EventArgs e)
         {
             guna2ShadowForm1.SetShadowForm(this);
+          
         }
 
         private void dateTimeChartRangeControlClient1_CustomizeSeries(object sender, DevExpress.XtraEditors.ClientDataSourceProviderCustomizeSeriesEventArgs e)

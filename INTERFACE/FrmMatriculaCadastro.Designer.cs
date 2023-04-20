@@ -50,15 +50,21 @@
             this.cmbClasse = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTurno = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtFim = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbTipo = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.load = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.load)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -348,27 +354,6 @@
             this.guna2Button1.Text = "Salvar";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderRadius = 8;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = global::INTERFACE.Properties.Resources.Search_64px;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(500, 177);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(34, 40);
-            this.guna2Button2.TabIndex = 52;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -466,6 +451,111 @@
             this.cmbTipo.ShadowDecoration.Parent = this.cmbTipo;
             this.cmbTipo.Size = new System.Drawing.Size(159, 36);
             this.cmbTipo.TabIndex = 57;
+            this.cmbTipo.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_SelectedIndexChanged);
+            // 
+            // load
+            // 
+            this.load.BackColor = System.Drawing.Color.Transparent;
+            this.load.Image = ((System.Drawing.Image)(resources.GetObject("load.Image")));
+            this.load.Location = new System.Drawing.Point(210, 119);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(340, 242);
+            this.load.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.load.TabIndex = 59;
+            this.load.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(12, 315);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 20);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "Total A pagar";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.BackColor = System.Drawing.Color.White;
+            this.txtTotal.BorderRadius = 5;
+            this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotal.DefaultText = "";
+            this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotal.DisabledState.Parent = this.txtTotal;
+            this.txtTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotal.FocusedState.Parent = this.txtTotal;
+            this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotal.HoverState.Parent = this.txtTotal;
+            this.txtTotal.Location = new System.Drawing.Point(16, 338);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.PasswordChar = '\0';
+            this.txtTotal.PlaceholderText = "";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.SelectedText = "";
+            this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
+            this.txtTotal.Size = new System.Drawing.Size(177, 36);
+            this.txtTotal.TabIndex = 60;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(206, 315);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(163, 20);
+            this.label10.TabIndex = 63;
+            this.label10.Text = "Forma de Pagamento";
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.guna2ComboBox1.BorderRadius = 5;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.FormattingEnabled = true;
+            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "A vista",
+            "TPA"});
+            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(210, 338);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Size = new System.Drawing.Size(235, 36);
+            this.guna2ComboBox1.TabIndex = 64;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BorderRadius = 8;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Image = global::INTERFACE.Properties.Resources.Search_64px;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button2.Location = new System.Drawing.Point(500, 177);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(34, 40);
+            this.guna2Button2.TabIndex = 52;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // FrmMatriculaCadastro
             // 
@@ -473,6 +563,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 428);
+            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.load);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.txtFim);
@@ -502,6 +597,7 @@
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.load)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,7 +621,6 @@
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTurno;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ComboBox cmbClasse;
@@ -535,5 +630,11 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2ComboBox cmbTipo;
         private Guna.UI2.WinForms.Guna2DateTimePicker txtFim;
+        private System.Windows.Forms.PictureBox load;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2TextBox txtTotal;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

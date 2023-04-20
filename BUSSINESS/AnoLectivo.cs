@@ -39,6 +39,10 @@ namespace BUSSINESS
         {
             return anoLetivoDB.Insert(this.Ano,this.DataInicio, this.DataFinal, this.Status);
         }
+         public static bool FecharAnoLetivo()
+        {
+            return new AnoLetivoDB().FecharAnoLetivo();
+        }
         public bool Edit()
         {
             return anoLetivoDB.Edit(this.Id, this.Ano, this.DataInicio, this.DataFinal, this.Status);

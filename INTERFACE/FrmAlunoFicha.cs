@@ -52,7 +52,37 @@ namespace INTERFACE
             guna2DataGridView1.Rows[5].Cells[1].Value = aluno.DataNascimento;
             guna2DataGridView1.Rows[6].Cells[1].Value = aluno.Sexo;
             guna2DataGridView1.Rows[7].Cells[1].Value = aluno.Encarregado.Nome;
+            /////////////////////////////
+
+            int count = 0;
+            listMatricula = Matricula.listForIdAlunoAno(aluno.Id);
+            lblEstado.Text = Matricula.listForIdAlunoAno(aluno.Id).Where(m => m.Status == 1).ToList().Count > 0 ? "Matriculado" : "Não matriculado";
+            if(listMatricula.Count>0)
+            guna2DataGridView2.Rows.Add(listMatricula.Count);
+            foreach (Matricula item in listMatricula)
+            {
+              
+                guna2DataGridView2.Rows[count].Cells["numero"].Value = item.Nmatricula;
+                guna2DataGridView2.Rows[count].Cells["ano"].Value = AnoLectivo.findId(item.IdAno).Ano;
+                guna2DataGridView2.Rows[count].Cells["classe"].Value = item.Turma.Classe.Nome;
+                guna2DataGridView2.Rows[count].Cells["curso"].Value = item.Turma.Curso.Nome;
+                guna2DataGridView2.Rows[count].Cells["turno"].Value = item.Turma.Turno.nome;
+                guna2DataGridView2.Rows[count].Cells["turma"].Value = item.Turma.Turno.nome;
+                guna2DataGridView2.Rows[count].Cells["tipo"].Value = item.Tipo;
+                guna2DataGridView2.Rows[count].Cells["estado"].Value = item.Status == 0 || item.Status == 2 ? "Não Matriculado" : "Matriculado";
+
+                count++;
+            }
+            if (Matricula.listForIdAlunoAno(aluno.Id).Where(m => m.Status == 1).ToList().Count > 0)
+            {
+                btnAnular.Visible = true;
+            }
+            listProp = Propina.listForAlunoId(aluno.Id);
+            loadGrid(listProp);
+
         }
+        List<Propina> listProp;
+        List<Matricula> listMatricula;
 
         private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
         {
@@ -60,6 +90,81 @@ namespace INTERFACE
            
 
 
+        }
+
+        private void guna2DataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (MessageBox.Show("Cancelar Matricula")== DialogResult.Yes)
+            {
+                Matricula.fecharMatricular(aluno.Id);
+                
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+      
+            if (Matricula.listForIdAlunoAno(aluno.Id).Where(m => m.Status == 1).ToList().Count > 0)
+            {
+                if (MessageBox.Show("Esse aluno ja se encontra matriculado, deseja continuar mesmo assim")== DialogResult.Yes)
+                            {
+                  FrmMatriculaCadastro frmMatricula = new FrmMatriculaCadastro();
+                  frmMatricula.setAluno(aluno.Id);
+                  frmMatricula.ShowDialog();
+                }
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (Matricula.listForIdAlunoAno(aluno.Id).Where(m => m.Status == 1).ToList().Count > 0)
+            {
+                Matricula.fecharMatricular(aluno.Id);
+                lblEstado.Text = "Não Matriculado";
+            }
+        }
+        
+
+        public void loadGrid(List<Propina> propinas)
+        {
+            guna2DataGridView3.Rows.Clear();
+            if (propinas.Count>0)
+            {
+                guna2DataGridView3.Rows.Add(propinas.Count);
+            }
+            int count = 0;
+            float divida = 0;
+            foreach (Propina item in propinas)
+            {
+                guna2DataGridView3.Rows[count].Cells["vencimento"].Value = item.DataVencimento;
+                guna2DataGridView3.Rows[count].Cells["totalpagar"].Value = item.Total;
+                guna2DataGridView3.Rows[count].Cells["totalpago"].Value = item.TotalPago;
+                guna2DataGridView3.Rows[count].Cells["datapagamento"].Value = item.DataPago;
+                guna2DataGridView3.Rows[count].Cells["multa"].Value = item.Multa.multa ;
+                guna2DataGridView3.Rows[count].Cells["status"].Value = item.Status == 0 ? "Não pago" : "Pago";
+                count++;
+
+                if (item.Status == 0)
+                    divida += item.Total;
+            }
+            lblToPay.Text = divida.ToString()+"Kz";
+        }
+
+        private void tabNavigationPage3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (MessageBox.Show("Quer liquidar essa propina?","",MessageBoxButtons.YesNo)== DialogResult.Yes)
+            {
+                Propina.Pay(listProp[e.RowIndex].Id, listProp[e.RowIndex].Total);
+                listProp = Propina.listForAlunoId(aluno.Id);
+                FrmReportView frm = new FrmReportView(Propina.getLast());
+                frm.ShowDialog();
+                loadGrid(listProp);
+            }
         }
     }
 }

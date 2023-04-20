@@ -27,16 +27,17 @@ namespace INTERFACE.GestaoAdministrativa
                 loadGrid(listAluno);
             }
         }
-
+ 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        { 
+
         }
 
         private void FrmAluno_Load(object sender, EventArgs e)
         {
             listAluno = new Aluno().listTodos();
             loadGrid(listAluno);
+        
         }
       
         public void loadGrid(List<Aluno> list)

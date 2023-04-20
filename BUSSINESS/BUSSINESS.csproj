@@ -51,9 +51,12 @@
     <Compile Include="Encarregado.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Matricula.cs" />
+    <Compile Include="MatriculaPayment.cs" />
+    <Compile Include="Multa.cs" />
     <Compile Include="Professor.cs" />
     <Compile Include="ProfessorDisciplina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propina.cs" />
     <Compile Include="Sala.cs" />
     <Compile Include="Turma.cs" />
     <Compile Include="TurmaDisciplinaProfessor.cs" />

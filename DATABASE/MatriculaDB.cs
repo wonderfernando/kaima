@@ -44,16 +44,28 @@ namespace DATABASE
 
         public DataRow findId(int id)
         {
-            DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula WHERE id = @id", con.getConection()))
+            try
             {
+                  DataTable dt = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM matricula WHERE id = @id", con.getConection()))
+                {
     
-                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
-                adapter.Fill(dt);
-                con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                    adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                    adapter.Fill(dt);
+                  
+                    DataRow drow = dt.Rows[0];
+                    return drow;
+                }
             }
+            catch (Exception erro)
+            {
+                throw new Exception(erro.Message);
+            }
+            finally
+            {
+              con.desconect();
+            }
+          
         }
         public DataTable listForIdAlunoAno(int id)
         {
@@ -82,9 +94,18 @@ namespace DATABASE
         public bool fecharMatricular(int Id)
         {
             DataTable dt = new DataTable();
-            using (MySqlCommand command = new MySqlCommand("UPDATE matricula SET status = 0 WHERE aluno_id = @id", con.getConection()))
+            using (MySqlCommand command = new MySqlCommand("UPDATE matricula SET status = 2 WHERE aluno_id = @id", con.getConection()))
             {
                 command.Parameters.AddWithValue("@id", Id);
+                return command.ExecuteNonQuery() == 1 ? true : false;
+            }
+        }
+        public bool fecharAnoLetivo()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlCommand command = new MySqlCommand("UPDATE matricula SET status = 3 WHERE status = 1", con.getConection()))
+            {
+              
                 return command.ExecuteNonQuery() == 1 ? true : false;
             }
         }

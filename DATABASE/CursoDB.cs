@@ -30,44 +30,72 @@ namespace DATABASE
         }
         public DataTable listTodos()
         {
+
             DataTable dt = new DataTable();
             try
             {
                 string sql = "SELECT * FROM curso";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con.getConection());
-                adapter.Fill(dt);
-                con.desconect();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(sql, con.getConection()))
+                {
+                    adapter.Fill(dt);
+                }
+               
             }
             catch (Exception erro)
             {
                 throw new Exception("deu erro ao acessar o banco de dados" + erro);
+            }finally
+            {
+                con.desconect();
             }
             return dt;
         }
         
         public DataRow findId(int id)
         {
+            DataRow drow;
             DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso WHERE id = @id", con.getConection()))
+            try
             {
-                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
-                adapter.Fill(dt);
-                con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                 using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso WHERE id = @id", con.getConection()))
+                     {
+                       adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                       adapter.Fill(dt);
+                       drow = dt.Rows[0];        
+                   }
+            }catch(Exception erro)
+            {
+                throw new Exception("Erro ao acessar o banco de dados");
             }
+            finally
+            {
+                con.desconect();   
+            }
+           return drow;
         }
         public DataRow getLast()
         {
-            DataTable dt = new DataTable();
-           using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso order by id desc limit 1", con.getConection()))
+            try
             {
+               DataTable dt = new DataTable();
+               using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso order by id desc limit 1", con.getConection()))
+                {
                     
-                adapter.Fill(dt);
-                con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                    adapter.Fill(dt);
+                    con.desconect();
+                    DataRow drow = dt.Rows[0];
+                    return drow;
+                }
             }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao acessar o banco de dados");
+            }
+            finally
+            {
+                con.desconect();
+            }
+            
         }
         public bool DELETE(int Id)
         {
@@ -97,14 +125,27 @@ namespace DATABASE
 
         public DataTable listQuery(string Nome)
         {
-            DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso WHERE  nome LIKE '%' @nome '%'", con.getConection()))
+            try
             {
-                adapter.SelectCommand.Parameters.AddWithValue("@nome", Nome);
-                adapter.Fill(dt);
-                con.desconect();
-                return dt;
+                DataTable dt = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM curso WHERE  nome LIKE '%' @nome '%'", con.getConection()))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@nome", Nome);
+                    adapter.Fill(dt);
+                    con.desconect();
+                    return dt;
+                }
+               
             }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao acessar o banco de dados");
+            }
+            finally
+            {
+                con.desconect();
+            }
+          
         }
 
     }

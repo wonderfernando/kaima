@@ -53,6 +53,15 @@ namespace DATABASE
                 return command.ExecuteNonQuery() == 1;
             }
         }
+        public bool FecharAnoLetivo()
+        {
+            using (MySqlCommand command = new MySqlCommand())
+            {
+                command.Connection = con.getConection();
+                command.CommandText = "UPDATE ano_letivo SET status = 0 WHERE 1=1 ";
+                return command.ExecuteNonQuery() == 1;
+            }
+        }
 
         public DataTable listTodos()
         {
@@ -67,15 +76,27 @@ namespace DATABASE
 
         public DataRow findId(int id)
         {
-            DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM ano_letivo WHERE id = @id",con.getConection()))
+            try
             {
-                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
-                adapter.Fill(dt);
-                con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                DataTable dt = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM ano_letivo WHERE id = @id",con.getConection()))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                    adapter.Fill(dt);
+                    con.desconect();
+                    DataRow drow = dt.Rows[0];
+                    return drow;
+                }
             }
+            catch (Exception erro)
+            {
+                throw new Exception(erro.Message);
+            }
+            finally
+            {
+
+            }
+          
         }
         public DataRow getLast()
         {
@@ -84,8 +105,9 @@ namespace DATABASE
             {
                 adapter.Fill(dt);
                 con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                if(dt.Rows.Count>0)
+                 return dt.Rows[0];
+                return null;
             }
         }
     }

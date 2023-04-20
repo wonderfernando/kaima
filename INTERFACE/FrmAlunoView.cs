@@ -1,4 +1,5 @@
 ﻿using BUSSINESS;
+using INTERFACE.Financeiro;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,12 @@ namespace INTERFACE
         {
             InitializeComponent();
             this.frmMatriculaC = frmMatriculaC;
+        }
+        FrmPropina frmProp;
+        public FrmAlunoView(FrmPropina frmProp)
+        {
+            InitializeComponent();
+            this.frmProp = frmProp;
         }
         List<Aluno> listAluno =  new Aluno().listTodos();
         FrmMatriculaCadastro frmMatriculaC;
@@ -68,6 +75,11 @@ namespace INTERFACE
                 if (frmMatriculaC!= null)
                 {
                     frmMatriculaC.setAluno(listAluno[e.RowIndex].Id);
+                    Close();
+                }
+                else if (frmProp!=null)
+                {
+                    frmProp.setAluno(listAluno[e.RowIndex]);
                     Close();
                 }
             }

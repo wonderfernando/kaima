@@ -55,15 +55,28 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\SellerPro\packages\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Guna.UI2">
@@ -72,9 +85,14 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -91,6 +109,36 @@
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmMatriculaPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmMatriculaPayments.Designer.cs">
+      <DependentUpon>FrmMatriculaPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmMudarpPreco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmMudarpPreco.Designer.cs">
+      <DependentUpon>FrmMudarpPreco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmMulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmMulta.Designer.cs">
+      <DependentUpon>FrmMulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmMultaPropinaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmMultaPropinaEdit.Designer.cs">
+      <DependentUpon>FrmMultaPropinaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financeiro\FrmPropina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financeiro\FrmPropina.Designer.cs">
+      <DependentUpon>FrmPropina.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -140,11 +188,29 @@
     <Compile Include="FrmMatriculaCadastro.Designer.cs">
       <DependentUpon>FrmMatriculaCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPayPropina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPayPropina.Designer.cs">
+      <DependentUpon>FrmPayPropina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportView.Designer.cs">
+      <DependentUpon>FrmReportView.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTurmaProfessoreView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTurmaProfessoreView.Designer.cs">
       <DependentUpon>FrmTurmaProfessoreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="GestaoAcademica\FrmAnolectvo.cs">
       <SubType>Form</SubType>
@@ -328,8 +394,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmMatriculaPayments.resx">
+      <DependentUpon>FrmMatriculaPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmMudarpPreco.resx">
+      <DependentUpon>FrmMudarpPreco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmMulta.resx">
+      <DependentUpon>FrmMulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmMultaPropinaEdit.resx">
+      <DependentUpon>FrmMultaPropinaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financeiro\FrmPropina.resx">
+      <DependentUpon>FrmPropina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -355,8 +442,17 @@
     <EmbeddedResource Include="FrmMatriculaCadastro.resx">
       <DependentUpon>FrmMatriculaCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPayPropina.resx">
+      <DependentUpon>FrmPayPropina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportView.resx">
+      <DependentUpon>FrmReportView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTurmaProfessoreView.resx">
       <DependentUpon>FrmTurmaProfessoreView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestaoAcademica\FrmAnolectvo.resx">
       <DependentUpon>FrmAnolectvo.cs</DependentUpon>
@@ -453,6 +549,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -732,6 +831,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Search_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-caima21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

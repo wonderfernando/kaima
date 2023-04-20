@@ -157,17 +157,14 @@
   <data name="class" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\class.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="319922396_1335703010574717_1463973141261530873_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\319922396_1335703010574717_1463973141261530873_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="animated-loading-gif-8-unscreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\animated-loading-gif-8-unscreen1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clockwt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clockwt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Expand Arrow_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expand Arrow_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="microscope" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\microscope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="academic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\academic1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,14 +184,17 @@
   <data name="writing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\writing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sign-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plus Math_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus Math_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Expand Arrow_64pxWT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Expand Arrow_64pxWT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo-caima2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo-caima2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,9 +250,6 @@
   <data name="Expand Arrow_64BKpx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expand Arrow_64BKpx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Expand Arrow_64pxWT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Expand Arrow_64pxWT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="clockbk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clockbk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -277,17 +274,20 @@
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="close-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forward_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forward_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Maximize Window_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Maximize Window_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forward_64WTpx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forward_64WTpx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="avatar6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avatar6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,11 +301,11 @@
   <data name="Expand Arrow_64pxWT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Expand Arrow_64pxWT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="animated-loading-gif-8-unscreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\animated-loading-gif-8-unscreen1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1564535_customer_user_userphoto_account_person_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1564535_customer_user_userphoto_account_person_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="319922396_1335703010574717_1463973141261530873_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\319922396_1335703010574717_1463973141261530873_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,8 +331,8 @@
   <data name="look" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\look.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Trash_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Trash_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="squareswt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\squareswt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -355,10 +355,13 @@
   <data name="btnEdit7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnEdit7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forward_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forward_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="microscope" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\microscope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo-caima21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo-caima21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -51,7 +51,6 @@
             this.cmbEncarregado = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnFechar = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -364,26 +363,6 @@
             this.txtDate.TabIndex = 76;
             this.txtDate.Value = new System.DateTime(2023, 1, 23, 2, 2, 45, 26);
             // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderRadius = 8;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Image = global::INTERFACE.Properties.Resources.Search_64px;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(685, 186);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(30, 36);
-            this.guna2Button2.TabIndex = 75;
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
@@ -432,7 +411,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(980, 450);
             this.Controls.Add(this.txtDate);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.cmbEncarregado);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.guna2PictureBox1);
@@ -489,7 +467,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ComboBox cmbEncarregado;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2DateTimePicker txtDate;
     }
 }

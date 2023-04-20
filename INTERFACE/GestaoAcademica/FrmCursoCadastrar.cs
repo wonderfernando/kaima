@@ -59,7 +59,7 @@ namespace INTERFACE.GestaoAcademica
                 if (c.inserir())
                   {
                     MessageBox.Show("Inserido com sucesso");
-                    if (MessageBox.Show("Adcionar agora as diciplinas ? ") == DialogResult.Yes)
+                    if (MessageBox.Show("Adcionar agora as diciplinas ? ","",MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         int idCurso = Curso.getLast().Id;
                         FrmCursoDisciplinaClasse frmCdC = new FrmCursoDisciplinaClasse(idCurso);

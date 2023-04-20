@@ -66,15 +66,27 @@ namespace DATABASE
         }
         public DataRow findId(int id)
         {
-            DataTable dt = new DataTable();
-            using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM aluno WHERE id = @id", con.getConection()))
+            try
             {
-                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
-                adapter.Fill(dt);
-                con.desconect();
-                DataRow drow = dt.Rows[0];
-                return drow;
+                 DataTable dt = new DataTable();
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM aluno WHERE id = @id", con.getConection()))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                    adapter.Fill(dt);
+                   
+                    DataRow drow = dt.Rows[0];
+                    return drow;
+                }
             }
+            catch (Exception erro)
+            {
+                throw new Exception(erro.Message);
+            }
+            finally
+            {
+                 con.desconect();
+            }
+           
         }
         public DataRow getLast()
         {

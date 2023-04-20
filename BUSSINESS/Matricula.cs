@@ -14,6 +14,8 @@ namespace BUSSINESS
         public int IdAluno { get; set; }
         public int IdTurma { get; set; }
         public int IdAno { get; set; }
+        public AnoLectivo AnoLetivo { get; set; }
+        public Turma Turma { get; set; }
         public string Data { get; set; }
         public string Nmatricula { get; set; }
         public int Status { get; set; }
@@ -64,7 +66,10 @@ namespace BUSSINESS
             List<Matricula> matriculas = new List<Matricula>();
             foreach (DataRow item in matriculaDB.listTodos().Rows)
             {
-                matriculas.Add(new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()),  int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(),int.Parse(item["status"].ToString()), item["tipo"].ToString()));
+                Matricula m = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
+                m.AnoLetivo = AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
+                m.Turma = Turma.findId(int.Parse(item["turma_id"].ToString()));
+                matriculas.Add(m);
             }
             return matriculas;
         }
@@ -73,8 +78,12 @@ namespace BUSSINESS
             List<Matricula> matriculas = new List<Matricula>();
             foreach (DataRow item in new MatriculaDB().listForIdAlunoAno(idAluno).Rows)
             {
-                matriculas.Add(new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString()));
+                Matricula m = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
+                m.AnoLetivo = AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
+                m.Turma = Turma.findId(int.Parse(item["turma_id"].ToString()));
+                matriculas.Add(m);
             }
+
             return matriculas;
         }
         public static Matricula findId(int id)
@@ -83,6 +92,8 @@ namespace BUSSINESS
             if (item != null)
             {
                 Matricula matricula = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
+                matricula.AnoLetivo = AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
+                matricula.Turma = Turma.findId(int.Parse(item["turma_id"].ToString()));
                 return matricula;
             }
             return null;
@@ -93,6 +104,8 @@ namespace BUSSINESS
             if (item != null)
             {
                 Matricula matricula = new Matricula(int.Parse(item["id"].ToString()), int.Parse(item["aluno_id"].ToString()), int.Parse(item["turma_id"].ToString()), int.Parse(item["ano_id"].ToString()), item["data_matricula"].ToString(), item["nmatricula"].ToString(), int.Parse(item["status"].ToString()), item["tipo"].ToString());
+                matricula.AnoLetivo = AnoLectivo.findId(int.Parse(item["ano_id"].ToString()));
+                matricula.Turma = Turma.findId(int.Parse(item["turma_id"].ToString()));
                 return matricula;
             }
             return null;
@@ -100,6 +113,10 @@ namespace BUSSINESS
         public static bool fecharMatricular(int id)
         {
             return new MatriculaDB().fecharMatricular(id);
+        }
+        public static bool fecharAnoLetivo()
+        {
+            return new MatriculaDB().fecharAnoLetivo();
         }
 
     }
